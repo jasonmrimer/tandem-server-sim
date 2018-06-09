@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea80114c-1997-4ecb-823d-e8411d52cff6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Atlas.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ConsumerModel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HeaderModel.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SimBody.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimBody.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SimBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimBody.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimHeaders.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimHeaders.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimHeaders.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimHeaders.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SimRow.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimRow.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SimRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SimTable.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimTable.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +18,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="SimHeaders.test.tsx" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SimHeaders.test.tsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/SimHeaders.test.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+                <state relative-caret-position="408">
+                  <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -38,7 +30,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SimTable.test.tsx" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SimTable.test.tsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SimTable.test.tsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="357">
@@ -46,6 +38,15 @@
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HeaderModel.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/HeaderModel.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
                 </state>
               </provider>
             </entry>
@@ -66,11 +67,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SimRow.tsx" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SimRow.tsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SimRow.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
+                <state relative-caret-position="425">
+                  <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -78,11 +79,23 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SimHeaders.tsx" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SimHeaders.tsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/SimHeaders.tsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="527">
-                  <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+                  <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SimTable.tsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/SimTable.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="652">
+                  <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -116,12 +129,13 @@
         <option value="$PROJECT_DIR$/src/SimBody.test.tsx" />
         <option value="$PROJECT_DIR$/src/SimRow.test.tsx" />
         <option value="$PROJECT_DIR$/src/SimTable.test.tsx" />
-        <option value="$PROJECT_DIR$/src/SimHeaders.test.tsx" />
-        <option value="$PROJECT_DIR$/src/SimTable.tsx" />
         <option value="$PROJECT_DIR$/src/Simulation.tsx" />
         <option value="$PROJECT_DIR$/src/SimBody.tsx" />
-        <option value="$PROJECT_DIR$/src/SimHeaders.tsx" />
         <option value="$PROJECT_DIR$/src/SimRow.tsx" />
+        <option value="$PROJECT_DIR$/src/HeaderModel.ts" />
+        <option value="$PROJECT_DIR$/src/SimTable.tsx" />
+        <option value="$PROJECT_DIR$/src/SimHeaders.test.tsx" />
+        <option value="$PROJECT_DIR$/src/SimHeaders.tsx" />
       </list>
     </option>
   </component>
@@ -134,8 +148,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="1418" />
@@ -330,29 +343,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528423413708</updated>
-      <workItem from="1528423414912" duration="24010000" />
+      <workItem from="1528423414912" duration="24856000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SimTable - 2018.06.09 at 18h 25m 08s.xml">
-      <configuration name="SimTable" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SimBody - 2018.06.09 at 18h 25m 22s.xml">
-      <configuration name="SimBody" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SimBody - 2018.06.09 at 18h 25m 51s.xml">
-      <configuration name="SimBody" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SimBody - 2018.06.09 at 18h 26m 03s.xml">
-      <configuration name="SimBody" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SimBody - 2018.06.09 at 18h 26m 23s.xml">
-      <configuration name="SimBody" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SimBody - 2018.06.09 at 18h 26m 37s.xml">
-      <configuration name="SimBody" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 33m 54s.xml">
       <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -365,9 +360,27 @@
     <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 35m 27s.xml">
       <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 50m 52s.xml">
+      <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 54m 53s.xml">
+      <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 56m 01s.xml">
+      <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 56m 36s.xml">
+      <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 58m 02s.xml">
+      <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 58m 17s.xml">
+      <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16521000" />
+    <option name="totallyTimeSpent" value="17367000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="2560" height="1418" extended-state="6" />
@@ -579,26 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SimHeaders.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SimTable.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Simulation.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -609,10 +602,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SimTable.tsx">
+    <entry file="file://$PROJECT_DIR$/src/HeaderModel.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="46" column="1" lean-forward="true" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
+        <state relative-caret-position="85">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SimRow.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -629,20 +629,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SimHeaders.tsx">
+    <entry file="file://$PROJECT_DIR$/src/SimTable.test.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        <state relative-caret-position="357">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SimRow.tsx">
+    <entry file="file://$PROJECT_DIR$/src/SimTable.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
+        <state relative-caret-position="652">
+          <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SimHeaders.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SimHeaders.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
