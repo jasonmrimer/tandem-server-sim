@@ -7,7 +7,7 @@ describe('SimRow', () => {
 
   beforeEach(() => {
     subject = shallow(
-      <SimRow/>
+      <SimRow index={1}/>
     )
   });
 

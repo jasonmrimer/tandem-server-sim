@@ -1,9 +1,23 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
-export const SimRow = () => {
+interface Props {
+  index: number
+  className?: string;
+}
+
+export const SimRow = (props: Props) => {
   return (
-    <div>
-      <span className='seed'>{Math.random()}</span>
+    <div className={props.className}>
+      <span className='seed' id={`${props.index}`}>{Math.random()}</span>
     </div>
   );
 }
+
+export const StyledSimRow = styled(SimRow)`
+  text-align: right;
+  border-bottom: 0.5px solid #222;
+  border-left: 0.5px solid #222;
+  border-right: 0.5px solid #222;
+  padding: 4px 4px 0px 4px;
+`;

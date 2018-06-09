@@ -1,50 +1,29 @@
 import * as React from 'react';
-import { SimRow } from './SimRow';
+import { StyledSimRow } from './SimRow';
+import styled from 'styled-components';
+import * as classNames from 'classnames';
 
 interface Props {
-
+  seeds: number[];
+  className?: string;
 }
 
-interface State {
-  arrivalClock: number,
-  seeds: number[]
-}
-
-export class SimBody extends React.Component<Props, State> {
-  state = {
-    arrivalClock: 0.0,
-    seeds: []
-  };
-
-  componentDidMount() {
-    let arrivalClock = 0.0;
-
-    while (arrivalClock < 1000) {
-      const seed = Math.random();
-      const interarrivalTime = (-1) * Math.log(seed);
-      arrivalClock += interarrivalTime;
-
-      let seeds: number[] = [...this.state.seeds];
-      seeds.push(seed);
-
-      this.setState({arrivalClock: arrivalClock, seeds: seeds});
-    }
-  }
-
-  renderRows() {
-    const rows = this.state.seeds.map((index) => {
-      return <SimRow key={index}/>;
+export const SimBody = (props: Props) => {
+  const renderRows = (seeds: number[]) => {
+    const rows = seeds.map((index) => {
+      return (<StyledSimRow key={index} index={index}/>);
     });
 
-    return (<div>{rows}</div>;
+    return (rows)
   }
 
-    render()
-    {
-      return (
-        <div>
-          {this.renderRows()}
-        </div>
-      )
-    }
-  };
+  return (
+    <div className={classNames(props.className, 'sim-body')}>
+      {renderRows(props.seeds)}
+    </div>
+  )
+}
+
+export const StyledSimBody = styled(SimBody)`
+  width: 200px;
+`;
