@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { SimHeaders } from './SimHeaders';
+import { StyledSimHeaders } from './SimHeaders';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { SimTable } from './SimTable';
-import { SimBody } from './SimBody';
+import { StyledSimBody } from './SimBody';
+import { ConsumerModel } from './ConsumerModel';
 
 describe('SimTable', () => {
   let subject: ShallowWrapper
@@ -14,17 +15,17 @@ describe('SimTable', () => {
   });
 
   it('should render table headers', () => {
-    expect(subject.find(SimHeaders).exists()).toBeTruthy();
+    expect(subject.find(StyledSimHeaders).exists()).toBeTruthy();
   });
 
   it('should render a table body', () => {
-    expect(subject.find(SimBody).exists()).toBeTruthy();
+    expect(subject.find(StyledSimBody).exists()).toBeTruthy();
   });
 
-  it('should create seeds until 1000 minutes and send to SimBody', () => {
-    const seeds = (subject.state('seeds')) as number[];
-    expect(subject.state('arrivalClock')).toBeGreaterThan(1000);
-    expect(seeds.length).toBeGreaterThan(1);
-    expect(subject.find(SimBody).prop('seeds')).toBe(seeds);
+  it('should create consumer seeds and arrival times', () => {
+    const consumers = (subject.state('consumers')) as ConsumerModel[];
+    expect(consumers.length).toBeGreaterThan(1);
+    expect(consumers[consumers.length - 1].arrivalTime).toBeLessThanOrEqual(1000);
+    expect(subject.find(StyledSimBody).prop('consumers')).toBe(consumers);
   });
 });

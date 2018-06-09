@@ -1,19 +1,24 @@
 import * as React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { SimBody } from './SimBody';
-import { SimRow } from './SimRow';
+import { StyledSimRow } from './SimRow';
+import { ConsumerModel } from './ConsumerModel';
 
 describe('SimBody', () => {
   let subject: ShallowWrapper;
-  const seeds = [0.1, 0.2, 0.3];
+  const consumers = [
+    new ConsumerModel(1, 1, 1,),
+    new ConsumerModel(2, 2, 2,),
+    new ConsumerModel(3, 3, 3,)
+  ];
 
   beforeEach(() => {
     subject = shallow(
-      <SimBody seeds={seeds}/>
+      <SimBody consumers={consumers}/>
     )
   });
 
-  it('should render a row for each seed', () => {
-    expect(subject.find(SimRow).length).toBe(3);
+  it('should render a consumer for each seed', () => {
+    expect(subject.find(StyledSimRow).length).toBe(3);
   });
 });
