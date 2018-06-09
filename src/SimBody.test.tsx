@@ -12,7 +12,8 @@ describe('SimBody', () => {
     )
   });
 
-  it('should render 1 row', () => {
-    expect(subject.find(SimRow).length).toBe(1);
+  it('should render rows until it reaches 1000 minutes of arrivals', () => {
+    expect(subject.state('arrivalClock')).toBeGreaterThan(1000);
+    expect(subject.find(SimRow).length).toBeGreaterThan(1);
   });
 });
