@@ -3,6 +3,8 @@ import { StyledSimHeaders } from './SimHeaders';
 import { StyledSimBody } from './SimBody';
 import { ConsumerModel } from './ConsumerModel';
 import { HeaderModel } from './HeaderModel';
+import { ConsumerService } from './ConsumerService';
+import styled from 'styled-components';
 
 interface Props {
   className?: string;
@@ -19,23 +21,10 @@ export class SimTable extends React.Component<Props, State> {
 
 
   componentDidMount() {
-    let arrivalClock = 0.0;
-    let consumers: ConsumerModel[];
-    consumers = [];
+    let consumerService = new ConsumerService(1000);
+    consumerService.hydrate();
 
-    while (arrivalClock < 1000) {
-      const seed = Math.random();
-      const interarrivalTime = (-1) * Math.log(seed);
-      const arrivalTime = arrivalClock + interarrivalTime;
-
-      if (arrivalTime < 1000) {
-        consumers.push(new ConsumerModel(seed, interarrivalTime, arrivalTime));
-      }
-
-      arrivalClock += interarrivalTime;
-    }
-
-    this.setState({consumers});
+    this.setState({consumers: consumerService.consumers});
   }
 
   render() {
@@ -43,13 +32,19 @@ export class SimTable extends React.Component<Props, State> {
       new HeaderModel('Seed', 'U(0,1)'),
       new HeaderModel('Interarrival Time', '(min)'),
       new HeaderModel('Arrival Time', '(min)'),
+      new HeaderModel('S1 Start', '(min)'),
     ];
 
     return (
-      <div>
+      <div className={this.props.className}>
         <StyledSimHeaders headers={headers}/>
         <StyledSimBody consumers={this.state.consumers}/>
       </div>
     )
   }
 }
+
+export const StyledSimTable = styled(SimTable)`
+  width: fit-content;
+  margin: auto;
+`;

@@ -31,8 +31,6 @@ export const SimBody = (props: Props) => {
 }
 
 export const StyledSimBody = styled(SimBody)`
-  width: 600px;
-  border-right: solid 1px #222;
-  border-left: solid 1px #222;
-  margin: auto;
+  border-right: 1px solid  #222;
+  border-left: 1px solid #222;
 `;

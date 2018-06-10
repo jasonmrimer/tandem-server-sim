@@ -22,7 +22,7 @@ describe('SimTable', () => {
     expect(subject.find(StyledSimBody).exists()).toBeTruthy();
   });
 
-  it('should create consumer seeds and arrival times', () => {
+  it('should hydrate a consumer service and set the state with provided consumers', () => {
     const consumers = (subject.state('consumers')) as ConsumerModel[];
     expect(consumers.length).toBeGreaterThan(1);
     expect(consumers[consumers.length - 1].arrivalTime).toBeLessThanOrEqual(1000);

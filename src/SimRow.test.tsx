@@ -19,5 +19,6 @@ describe('SimRow', () => {
     expect(parseFloat(subject.find('.seed').text())).toBe(1);
     expect(parseFloat(subject.find('.interarrival-time').text())).toBe(2);
     expect(parseFloat(subject.find('.arrival-time').text())).toBe(3);
+    expect(parseFloat(subject.find('.s1-start').text())).toBe(3);
   });
 });

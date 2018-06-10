@@ -12,27 +12,31 @@ export const SimRow = (props: Props) => {
   return (
     <div className={props.className} id={`${props.index}`}>
       <span className='seed'>{props.consumer.seed}</span>
-      <span className='interarrival-time'>{props.consumer.interarrivalTime.toFixed(2)}</span>
-      <span className='arrival-time'>{props.consumer.arrivalTime.toFixed(2)}</span>
+      <span className='interarrival-time'>{props.consumer.interarrivalTime.toFixed(1)}</span>
+      <span className='arrival-time'>{props.consumer.arrivalTime.toFixed(1)}</span>
+      <span className='s1-start'>{props.consumer.arrivalTime.toFixed(1)}</span>
     </div>
   );
 }
 
 export const StyledSimRow = styled(SimRow)`
-  width: 600px;
+  width: fit-content;
   display: flex;
   
   span {
     width: 200px;
     text-align: right;
-    border-bottom: 0.5px solid #222;
-    border-left: 0.5px solid #222;
-    border-right: 0.5px solid #222;
+    border-bottom: 1px solid #222;
+    border-right: 1px solid #222;
     padding: 4px 4px 0px 4px;
   }
   
-  span:first-child, span:last-child {
+  span:first-child {
+    border-right: 1px solid #222;
     border-left: none;
+  }
+  
+  span:last-child {
     border-right: none;
   }
 `;

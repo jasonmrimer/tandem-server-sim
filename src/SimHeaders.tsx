@@ -26,13 +26,11 @@ export const SimHeaders = (props: Props) => {
 };
 
 export const StyledSimHeaders = styled(SimHeaders)`
-  width: 600px;
   display: flex;
   font-size: 24px;
   font-weight: 500;
   border-bottom: 0.5px solid #222;
   text-align: right;
-  margin: auto;
   
   .header {
     padding: 8px;
