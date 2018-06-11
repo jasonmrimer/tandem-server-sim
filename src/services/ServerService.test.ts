@@ -86,4 +86,13 @@ describe('ServerService', () => {
 
     expect(subject.calculateMaximumWait(consumers)).toBe(3);
   });
+
+  it('should calculate the number of consumers served before 1000 minutes', () => {
+    const services = [
+      new ServiceModel(1, 1, 2),
+      new ServiceModel(5, 1, 2),
+      new ServiceModel(8, 1, 2000),
+    ];
+    expect(subject.calculateConsumersServedBeforeLimit(services, 1000)).toBe(2);
+  });
 });

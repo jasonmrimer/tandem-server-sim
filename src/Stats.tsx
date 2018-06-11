@@ -25,6 +25,10 @@ export const Stats = (props: Props) => {
           <span>Maximum wait time [minutes]:</span>
           <span>{props.serverService.maximumWait.toFixed(1)}</span>
         </div>
+        <div className='consumers-served'>
+          <span>Consumers served before 1000 minutes:</span>
+          <span>{props.serverService.consumersServed}</span>
+        </div>
       </div>
     </div>
   )

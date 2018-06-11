@@ -40,4 +40,9 @@ describe('Stats', () => {
     expect(subject.find('.maximum-wait').find('span').at(1).text()).toContain(
       `${(serverService.maximumWait).toFixed(1)}`);
   });
+
+  it('should render the number of customers served before 1000 minutes', () => {
+    expect(subject.find('.consumers-served').find('span').at(0).text()).toBe('Consumers served before 1000 minutes:');
+    expect(subject.find('.consumers-served').find('span').at(1).text()).toBe(`${serverService.consumersServed}`);
+  });
 });

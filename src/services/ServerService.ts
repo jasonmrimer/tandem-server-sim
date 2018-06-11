@@ -7,6 +7,7 @@ export class ServerService {
   private _utilization: number = 0;
   private _averageWait: number = 0;
   private _maximumWait: number = 0;
+  private _consumersServed: number = 0;
 
   public hydrate(consumers: ConsumerModel[]) {
     this._consumers = consumers;
@@ -16,6 +17,7 @@ export class ServerService {
     this._utilization = this.calculateUtilization(this._services);
     this._averageWait = this.calculateAverageWait(this._consumers);
     this._maximumWait = this.calculateMaximumWait(this._consumers);
+    this._consumersServed = this.calculateConsumersServedBeforeLimit(this._services, 1000);
   }
 
 
@@ -33,6 +35,10 @@ export class ServerService {
 
   public get maximumWait() {
     return this._maximumWait;
+  }
+
+  public get consumersServed() {
+    return this._consumersServed;
   }
 
   public calculateStartTime(previousService: ServiceModel, consumer: ConsumerModel) {
@@ -77,6 +83,10 @@ export class ServerService {
 
   public calculateMaximumWait(consumers: ConsumerModel[]) {
     return Math.max.apply(Math, consumers.map((consumer) => consumer.waitTime));
+  }
+
+  public calculateConsumersServedBeforeLimit(services: ServiceModel[], timeLimit: number) {
+    return services.filter((service) => service.endTime <= 1000).length;
   }
 
   private createServices() {
