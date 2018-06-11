@@ -28,6 +28,7 @@ export const SimRow = (props: Props) => {
       <span className='server-two-start'>{serverTwoService.startTime.toFixed(1)}</span>
       <span className='server-two-seed'>{serverTwoService.seed.toFixed(8)}</span>
       <span className='server-two-duration'>{serverTwoService.duration.toFixed(1)}</span>
+      <span className='server-two-end'>{serverTwoService.endTime.toFixed(1)}</span>
     </div>
   );
 }

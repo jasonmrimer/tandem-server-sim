@@ -27,6 +27,7 @@ export const SimTable = (props: Props) => {
     new HeaderModel('S2 Start', '[minutes]'),
     new HeaderModel('S2 Seed', 'U(0,1)'),
     new HeaderModel('S2 Duration', '{-0.9 * ln(seed)} [minutes]'),
+    new HeaderModel('S2 End', '[minutes]'),
   ];
 
   return (

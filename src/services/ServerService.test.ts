@@ -26,6 +26,7 @@ describe('ServerService', () => {
     expect(serverTwoServices.seed).toBeGreaterThanOrEqual(0);
     expect(serverTwoServices.seed).toBeLessThan(1);
     expect(serverTwoServices.duration).toBeDefined();
+    expect(serverTwoServices.endTime).toBe(serverTwoServices.startTime + serverTwoServices.duration);
   });
 
   it('should serve next consumers only after the previous job ends', () => {
