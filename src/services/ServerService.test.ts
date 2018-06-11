@@ -129,7 +129,7 @@ describe('ServerService', () => {
       consumerModel3,
     ]
 
-    expect(subject.calculateAverageWait(consumers)).toBe(2);
+    expect(subject.calculateAverageWaitForServerOne(consumers)).toBe(2);
   });
 
   it('should calculate the max wait time for consumers', () => {

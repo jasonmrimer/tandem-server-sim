@@ -7,7 +7,8 @@ export class ServerService {
   private _serverTwoServices: ServiceModel[] = [];
   private _serverOneUtilization: number = 0;
   private _serverTwoUtilization: number = 0;
-  private _averageWait: number = 0;
+  private _averageWaitForServerOne: number = 0;
+  private _averageWaitForServerTwo: number = 0;
   private _maximumWait: number = 0;
   private _consumersServed: number = 0;
 
@@ -18,7 +19,8 @@ export class ServerService {
 
     this._serverOneUtilization = this.calculateUtilization(this._serverOneServices);
     this._serverTwoUtilization = this.calculateUtilization(this._serverTwoServices);
-    this._averageWait = this.calculateAverageWait(this._consumers);
+    this._averageWaitForServerOne = this.calculateAverageWaitForServerOne(this._consumers);
+    this._averageWaitForServerTwo = this.calculateAverageWaitForServerTwo(this._consumers);
     this._maximumWait = this.calculateMaximumWait(this._consumers);
     this._consumersServed = this.calculateConsumersServedBeforeLimit(this._serverOneServices, 1000);
   }
@@ -40,8 +42,12 @@ export class ServerService {
     return this._serverTwoServices;
   }
 
-  public get averageWait() {
-    return this._averageWait;
+  public get averageWaitForServerOne() {
+    return this._averageWaitForServerOne;
+  }
+
+  public get averageWaitForServerTwo() {
+    return this._averageWaitForServerTwo;
   }
 
   public get maximumWait() {
@@ -133,9 +139,16 @@ export class ServerService {
     return totalServiceTime / services[services.length - 1].endTime;
   }
 
-  public calculateAverageWait(consumers: ConsumerModel[]) {
+  public calculateAverageWaitForServerOne(consumers: ConsumerModel[]) {
     let totalWait = 0;
     consumers.map(consumer => totalWait += consumer.waitForServerOneTime);
+
+    return (consumers.length > 0) ? (totalWait / consumers.length) : 0;
+  }
+
+  public calculateAverageWaitForServerTwo(consumers: ConsumerModel[]) {
+    let totalWait = 0;
+    consumers.map(consumer => totalWait += consumer.waitForServerTwoTime);
 
     return (consumers.length > 0) ? (totalWait / consumers.length) : 0;
   }
