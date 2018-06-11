@@ -24,7 +24,7 @@ export class ServerService {
     this._averageWaitForServerTwo = this.calculateAverageWaitForServerTwo(this._consumers);
     this._maximumWaitForServerOne = this.calculateMaximumWaitForServerOne(this._consumers);
     this._maximumWaitForServerTwo = this.calculateMaximumWaitForServerTwo(this._consumers);
-    this._consumersServed = this.calculateConsumersServedBeforeLimit(this._serverOneServices, 1000);
+    this._consumersServed = this.calculateConsumersServedBeforeLimit(this._serverTwoServices, 1000);
   }
 
 

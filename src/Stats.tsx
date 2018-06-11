@@ -71,17 +71,28 @@ export const StyledStats = styled(Stats)`
   }
   
   .servers {
-    margin-top: 24px;
     flex-direction: row;
-       
+    
     .server-one, .server-two {
       width: 400px;
       flex-direction: column;
       justify-content: space-between;
       
+      > span {
+        font-weight: 600;
+        font-size: 18px;
+      }   
+      
       div {
         justify-content: space-between;
       }
     }
+    
+  }
+  
+  .consumers-served {
+    margin: auto;
+    margin-bottom: 48px;
+    font-weight: 500;
   }
 `;
