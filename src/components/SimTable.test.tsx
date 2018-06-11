@@ -12,9 +12,9 @@ describe('SimTable', () => {
   beforeEach(() => {
     subject = shallow(
       <SimTable
-        consumers={[new ConsumerModel(1,1,1)]}
-        services={[new ServiceModel(1,1,1)]}
-        serverTwoServices={[new ServiceModel(2)]}
+        consumers={[new ConsumerModel(1, 1, 1)]}
+        serverOneServices={[new ServiceModel(1, 1, 1)]}
+        serverTwoServices={[new ServiceModel(2, 2, 2)]}
       />
     );
   });

@@ -6,24 +6,28 @@ import { ServiceModel } from '../models/ServiceModel';
 interface Props {
   index: number;
   consumer: ConsumerModel;
-  service: ServiceModel;
+  serverOneService: ServiceModel;
   serverTwoService: ServiceModel;
   className?: string;
 }
 
 export const SimRow = (props: Props) => {
+  const {consumer, serverOneService, serverTwoService} = props;
+
   return (
     <div className={props.className} id={`${props.index}`}>
-      <span className='seed'>{props.consumer.seed.toFixed(8)}</span>
-      <span className='interarrival-time'>{props.consumer.interarrivalTime.toFixed(1)}</span>
-      <span className='arrival-time'>{props.consumer.arrivalTime.toFixed(1)}</span>
-      <span className='wait-time'>{props.consumer.waitTime.toFixed(1)}</span>
-      <span className='service-start'>{props.service.startTime.toFixed(1)}</span>
-      <span className='service-seed'>{props.service.seed.toFixed(8)}</span>
-      <span className='service-time'>{props.service.duration.toFixed(1)}</span>
-      <span className='service-end'>{props.service.endTime.toFixed(1)}</span>
-      <span className='service-idle'>{props.service.idleTime.toFixed(1)}</span>
-      <span className='server-two-start'>{props.serverTwoService.startTime.toFixed(1)}</span>
+      <span className='seed'>{consumer.seed.toFixed(8)}</span>
+      <span className='interarrival-time'>{consumer.interarrivalTime.toFixed(1)}</span>
+      <span className='arrival-time'>{consumer.arrivalTime.toFixed(1)}</span>
+      <span className='wait-time'>{consumer.waitTime.toFixed(1)}</span>
+      <span className='server-one-start'>{serverOneService.startTime.toFixed(1)}</span>
+      <span className='server-one-seed'>{serverOneService.seed.toFixed(8)}</span>
+      <span className='server-one-duration'>{serverOneService.duration.toFixed(1)}</span>
+      <span className='server-one-end'>{serverOneService.endTime.toFixed(1)}</span>
+      <span className='server-one-idle'>{serverOneService.idleTime.toFixed(1)}</span>
+      <span className='server-two-start'>{serverTwoService.startTime.toFixed(1)}</span>
+      <span className='server-two-seed'>{serverTwoService.seed.toFixed(8)}</span>
+      <span className='server-two-duration'>{serverTwoService.duration.toFixed(1)}</span>
     </div>
   );
 }

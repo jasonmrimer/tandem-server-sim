@@ -5,7 +5,7 @@ import { ServiceModel } from '../models/ServiceModel';
 describe('ServerService', () => {
   let subject = new ServerService();
 
-  it('should hydrate with consumers and start service at arrival times', () => {
+  it('should hydrate with consumers and start serverOneService at arrival times', () => {
     const consumers = [
       new ConsumerModel(1, 2, 3),
       new ConsumerModel(1, 1, 3)
@@ -13,17 +13,19 @@ describe('ServerService', () => {
 
     subject.hydrate(consumers);
 
-    let service = subject.serverOneServices[0];
-    let serverTwoServices = subject.serverTwoServices;
+    let serverOneService = subject.serverOneServices[0];
+    let serverTwoServices = subject.serverTwoServices[0];
 
-    expect(service.startTime).toBe(consumers[0].arrivalTime);
-    expect(service.seed).toBeGreaterThanOrEqual(0);
-    expect(service.seed).toBeLessThan(1);
-    expect(service.duration).toBeDefined();
-    expect(service.endTime).toBe(service.startTime + service.duration);
-    expect(service.idleTime).toBeGreaterThanOrEqual(0);
+    expect(serverOneService.startTime).toBe(consumers[0].arrivalTime);
+    expect(serverOneService.seed).toBeGreaterThanOrEqual(0);
+    expect(serverOneService.duration).toBeDefined();
+    expect(serverOneService.endTime).toBe(serverOneService.startTime + serverOneService.duration);
+    expect(serverOneService.idleTime).toBeGreaterThanOrEqual(0);
     expect(consumers[1].waitTime).toBeGreaterThan(0);
-    expect(serverTwoServices[0].startTime).toBeGreaterThanOrEqual(service.endTime);
+    expect(serverTwoServices.startTime).toBeGreaterThanOrEqual(serverOneService.endTime);
+    expect(serverTwoServices.seed).toBeGreaterThanOrEqual(0);
+    expect(serverTwoServices.seed).toBeLessThan(1);
+    expect(serverTwoServices.duration).toBeDefined();
   });
 
   it('should serve next consumers only after the previous job ends', () => {
@@ -40,14 +42,14 @@ describe('ServerService', () => {
     expect(idleTime).toBe(6);
   });
 
-  it('should cause the consumer to wait when there is no service available', () => {
+  it('should cause the consumer to wait when there is no serverOneService available', () => {
     const currConsumer = new ConsumerModel(1, 1, 1);
     const currService = new ServiceModel(5, 1, 1);
     const waitTime = subject.calculateWaitTime(currService, currConsumer);
     expect(waitTime).toBe(4);
   });
 
-  it('should calculate the utilization based on service over entire sim', () => {
+  it('should calculate the utilization based on serverOneService over entire sim', () => {
     const services = [
       new ServiceModel(1, 1, 2),
       new ServiceModel(5, 1, 2),

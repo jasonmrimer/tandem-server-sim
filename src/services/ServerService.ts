@@ -110,6 +110,14 @@ export class ServerService {
       return service;
   }
 
+  public createServerTwoService(serverOneService: ServiceModel) {
+    const startTime = serverOneService.endTime;
+    const seed = Math.random();
+    const duration = (-0.9) * Math.log(seed);
+
+    return new ServiceModel(startTime, seed, duration);
+  }
+
   private createServices() {
     this._consumers.map((consumer, index) => {
       const prevService = this._serverOneServices[this._serverOneServices.length - 1];
@@ -117,8 +125,7 @@ export class ServerService {
       const serverOneService = this.createServerOneService(prevService, consumer, nextConsumer);
       this._serverOneServices.push(serverOneService);
 
-      const serverTwoStartTime = serverOneService.endTime;
-      this._serverTwoServices.push(new ServiceModel(serverTwoStartTime));
+      this._serverTwoServices.push(this.createServerTwoService(serverOneService));
     })
   }
 }

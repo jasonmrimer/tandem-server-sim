@@ -28,7 +28,7 @@ describe('SimBody', () => {
     subject = shallow(
       <SimBody
         consumers={consumers}
-        services={services}
+        serverOneServices={services}
         serverTwoServices={serverTwoServices}
       />
     )
@@ -38,7 +38,7 @@ describe('SimBody', () => {
     expect(subject.find(StyledSimRow).at(0).props()).toEqual(
       {
         consumer: consumers[0],
-        service: services[0],
+        serverOneService: services[0],
         serverTwoService: serverTwoServices[0],
         index: 0
       })

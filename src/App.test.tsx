@@ -29,14 +29,14 @@ describe('App', () => {
     expect(subject.find(Route).at(1).prop('path')).toBe('/stats');
   });
 
-  it('should hydrate a consumer service and set the state with provided consumers', () => {
+  it('should hydrate a consumer serverOneService and set the state with provided consumers', () => {
     const consumerService = (subject.state('consumerService')) as ConsumerService;
     const consumers = consumerService.consumers;
     expect(consumers.length).toBeGreaterThan(1);
     expect(consumers[consumers.length - 1].arrivalTime).toBeLessThanOrEqual(1000);
   });
 
-  it('should hydrate a server 1 service and set the state with provided server', () => {
+  it('should hydrate a server 1 serverOneService and set the state with provided server', () => {
     const serverService = (subject.state('serverService')) as ServerService;
     const services = serverService.serverOneServices;
     expect(services.length).toBeGreaterThan(1);

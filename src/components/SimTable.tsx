@@ -8,7 +8,7 @@ import { ServiceModel } from '../models/ServiceModel';
 
 interface Props {
   consumers: ConsumerModel[];
-  services: ServiceModel[];
+  serverOneServices: ServiceModel[];
   serverTwoServices: ServiceModel[];
   className?: string;
 }
@@ -21,10 +21,12 @@ export const SimTable = (props: Props) => {
     new HeaderModel('Wait Time', '[minutes]'),
     new HeaderModel('S1 Start', '[minutes]'),
     new HeaderModel('S1 Seed', 'U(0,1)'),
-    new HeaderModel('S1 Service', '{-0.7 * ln(seed)} [minutes]'),
+    new HeaderModel('S1 Duration', '{-0.7 * ln(seed)} [minutes]'),
     new HeaderModel('S1 End', '[minutes]'),
     new HeaderModel('S1 Idle', '[minutes]'),
     new HeaderModel('S2 Start', '[minutes]'),
+    new HeaderModel('S2 Seed', 'U(0,1)'),
+    new HeaderModel('S2 Duration', '{-0.9 * ln(seed)} [minutes]'),
   ];
 
   return (
@@ -32,7 +34,7 @@ export const SimTable = (props: Props) => {
       <StyledSimHeaders headers={headers}/>
       <StyledSimBody
         consumers={props.consumers}
-        services={props.services}
+        serverOneServices={props.serverOneServices}
         serverTwoServices={props.serverTwoServices}
       />
     </div>

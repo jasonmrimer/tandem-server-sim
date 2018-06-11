@@ -14,13 +14,13 @@ describe('SimRow', () => {
     let service = new ServiceModel(1, 2, 3);
     service.idleTime = 0;
 
-    let serverTwoService = new ServiceModel(1);
+    let serverTwoService = new ServiceModel(4, 5, 6);
 
     subject = shallow(
       <SimRow
         index={1}
         consumer={consumer}
-        service={service}
+        serverOneService={service}
         serverTwoService={serverTwoService}
       />
     )
@@ -33,15 +33,17 @@ describe('SimRow', () => {
     expect(parseFloat(subject.find('.wait-time').text())).toBe(2);
   });
 
-  it('should render the service', () => {
-    expect(parseFloat(subject.find('.service-start').text())).toBe(1);
-    expect(parseFloat(subject.find('.service-seed').text())).toBe(2);
-    expect(parseFloat(subject.find('.service-time').text())).toBe(3);
-    expect(parseFloat(subject.find('.service-end').text())).toBe(4);
-    expect(parseFloat(subject.find('.service-idle').text())).toBe(0);
+  it('should render the serverOneService', () => {
+    expect(parseFloat(subject.find('.server-one-start').text())).toBe(1);
+    expect(parseFloat(subject.find('.server-one-seed').text())).toBe(2);
+    expect(parseFloat(subject.find('.server-one-duration').text())).toBe(3);
+    expect(parseFloat(subject.find('.server-one-end').text())).toBe(4);
+    expect(parseFloat(subject.find('.server-one-idle').text())).toBe(0);
   });
 
-  it('should render service from server two', () => {
-    expect(parseFloat(subject.find('.server-two-start').text())).toBe(1);
+  it('should render serverOneService from server two', () => {
+    expect(parseFloat(subject.find('.server-two-start').text())).toBe(4);
+    expect(parseFloat(subject.find('.server-two-seed').text())).toBe(5);
+    expect(parseFloat(subject.find('.server-two-duration').text())).toBe(6);
   });
 });

@@ -36,7 +36,7 @@ class App extends React.Component<Props, State> {
     let renderSimulation = () => (
       <StyledSimulation
         consumers={this.state.consumerService.consumers}
-        services={this.state.serverService.serverOneServices}
+        serverOneServices={this.state.serverService.serverOneServices}
         serverTwoServices={this.state.serverService.serverTwoServices}
       />
     );

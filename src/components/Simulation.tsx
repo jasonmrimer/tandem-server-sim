@@ -7,7 +7,7 @@ import { ServiceModel } from '../models/ServiceModel';
 
 interface Props {
   consumers: ConsumerModel[];
-  services: ServiceModel[];
+  serverOneServices: ServiceModel[];
   serverTwoServices: ServiceModel[];
   className?: string;
 }
@@ -19,7 +19,7 @@ export const Simulation = (props: Props) => {
       <h3>Sim Table</h3>
       <StyledSimTable
         consumers={props.consumers}
-        services={props.services}
+        serverOneServices={props.serverOneServices}
         serverTwoServices={props.serverTwoServices}
       />
     </div>
