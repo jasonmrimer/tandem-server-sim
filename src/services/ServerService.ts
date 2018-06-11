@@ -14,7 +14,7 @@ export class ServerService {
     this._consumers = consumers;
 
     this.createServices();
-    
+
     this._utilization = this.calculateUtilization(this._serverOneServices);
     this._averageWait = this.calculateAverageWait(this._consumers);
     this._maximumWait = this.calculateMaximumWait(this._consumers);
@@ -94,38 +94,67 @@ export class ServerService {
     return services.filter((service) => service.endTime <= timeLimit).length;
   }
 
+  public calculateWaitForServerTwoTime(prevServerTwoService: ServiceModel, currServerOneService: ServiceModel) {
+    let waitTime = 0;
+
+    if (prevServerTwoService) {
+      waitTime = prevServerTwoService.endTime - currServerOneService.endTime;
+    }
+
+    return waitTime > 0 ? waitTime : 0;
+  }
+
+  public calculateServerTwoStartTime(
+    prevServerTwoService: ServiceModel,
+    currServerOneService: ServiceModel
+  ) {
+    let startTime = currServerOneService.endTime;
+
+    if (prevServerTwoService) {
+      return startTime > prevServerTwoService.endTime ? startTime : prevServerTwoService.endTime
+    }
+
+    return startTime;
+  }
+
   public createServerOneService(
     prevService: ServiceModel,
     currConsumer: ConsumerModel,
     nextConsumer: ConsumerModel
   ) {
-      const startTime = this.calculateStartTime(prevService, currConsumer);
-      const seed = Math.random();
-      const duration = (-0.7) * Math.log(seed);
+    const startTime = this.calculateStartTime(prevService, currConsumer);
+    const seed = Math.random();
+    const duration = (-0.7) * Math.log(seed);
 
-      let service = new ServiceModel(startTime, seed, duration);
+    let service = new ServiceModel(startTime, seed, duration);
 
-      currConsumer.waitTime = this.calculateWaitTime(service, currConsumer);
-      service.idleTime = this.calculateIdleTime(service, nextConsumer);
-      return service;
+    currConsumer.waitTime = this.calculateWaitTime(service, currConsumer);
+    service.idleTime = this.calculateIdleTime(service, nextConsumer);
+    return service;
   }
 
-  public createServerTwoService(serverOneService: ServiceModel) {
-    const startTime = serverOneService.endTime;
+  public createServerTwoService(
+    prevServerTwoService: ServiceModel,
+    serverOneService: ServiceModel,
+    consumer: ConsumerModel
+  ) {
     const seed = Math.random();
     const duration = (-0.9) * Math.log(seed);
 
+    consumer.waitForServerTwoTime = this.calculateWaitForServerTwoTime(prevServerTwoService, serverOneService);
+    const startTime = this.calculateServerTwoStartTime(prevServerTwoService, serverOneService);
     return new ServiceModel(startTime, seed, duration);
   }
 
   private createServices() {
     this._consumers.map((consumer, index) => {
-      const prevService = this._serverOneServices[this._serverOneServices.length - 1];
+      const prevServerOneService = this._serverOneServices[this._serverOneServices.length - 1];
       const nextConsumer = this._consumers[index + 1];
-      const serverOneService = this.createServerOneService(prevService, consumer, nextConsumer);
+      const serverOneService = this.createServerOneService(prevServerOneService, consumer, nextConsumer);
       this._serverOneServices.push(serverOneService);
 
-      this._serverTwoServices.push(this.createServerTwoService(serverOneService));
+      const prevServerTwoService = this._serverTwoServices[this._serverTwoServices.length - 1];
+      this._serverTwoServices.push(this.createServerTwoService(prevServerTwoService, serverOneService, consumer));
     })
   }
 }

@@ -15,6 +15,7 @@ describe('SimRow', () => {
     service.idleTime = 0;
 
     let serverTwoService = new ServiceModel(4, 5, 6);
+    consumer.waitForServerTwoTime = 4;
 
     subject = shallow(
       <SimRow
@@ -30,7 +31,8 @@ describe('SimRow', () => {
     expect(parseFloat(subject.find('.seed').text())).toBe(1);
     expect(parseFloat(subject.find('.interarrival-time').text())).toBe(2);
     expect(parseFloat(subject.find('.arrival-time').text())).toBe(3);
-    expect(parseFloat(subject.find('.wait-time').text())).toBe(2);
+    expect(parseFloat(subject.find('.wait-for-server-one-time').text())).toBe(2);
+    expect(parseFloat(subject.find('.wait-for-server-two-time').text())).toBe(4);
   });
 
   it('should render the serverOneService', () => {

@@ -14,7 +14,7 @@ describe('ServerService', () => {
     subject.hydrate(consumers);
 
     let serverOneService = subject.serverOneServices[0];
-    let serverTwoServices = subject.serverTwoServices[0];
+    let serverTwoService = subject.serverTwoServices[0];
 
     expect(serverOneService.startTime).toBe(consumers[0].arrivalTime);
     expect(serverOneService.seed).toBeGreaterThanOrEqual(0);
@@ -22,11 +22,12 @@ describe('ServerService', () => {
     expect(serverOneService.endTime).toBe(serverOneService.startTime + serverOneService.duration);
     expect(serverOneService.idleTime).toBeGreaterThanOrEqual(0);
     expect(consumers[1].waitTime).toBeGreaterThan(0);
-    expect(serverTwoServices.startTime).toBeGreaterThanOrEqual(serverOneService.endTime);
-    expect(serverTwoServices.seed).toBeGreaterThanOrEqual(0);
-    expect(serverTwoServices.seed).toBeLessThan(1);
-    expect(serverTwoServices.duration).toBeDefined();
-    expect(serverTwoServices.endTime).toBe(serverTwoServices.startTime + serverTwoServices.duration);
+    expect(serverTwoService.startTime).toBeGreaterThanOrEqual(serverOneService.endTime);
+    expect(subject.serverTwoServices[1].startTime).toBeGreaterThanOrEqual(serverTwoService.endTime);
+    expect(serverTwoService.seed).toBeGreaterThanOrEqual(0);
+    expect(serverTwoService.seed).toBeLessThan(1);
+    expect(serverTwoService.duration).toBeDefined();
+    expect(serverTwoService.endTime).toBe(serverTwoService.startTime + serverTwoService.duration);
   });
 
   it('should serve next consumers only after the previous job ends', () => {
@@ -47,6 +48,13 @@ describe('ServerService', () => {
     const currConsumer = new ConsumerModel(1, 1, 1);
     const currService = new ServiceModel(5, 1, 1);
     const waitTime = subject.calculateWaitTime(currService, currConsumer);
+    expect(waitTime).toBe(4);
+  });
+
+  it('should cause the consumer to wait when there is no serverTwoService available', () => {
+    const currServerOneService = new ServiceModel(1, 1, 1);
+    const prevServerTwoService = new ServiceModel(5, 1, 1);
+    const waitTime = subject.calculateWaitForServerTwoTime(prevServerTwoService, currServerOneService);
     expect(waitTime).toBe(4);
   });
 
@@ -100,5 +108,19 @@ describe('ServerService', () => {
       new ServiceModel(8, 1, 2000),
     ];
     expect(subject.calculateConsumersServedBeforeLimit(services, 1000)).toBe(2);
+  });
+
+  it('should calculate start time for server two based on availability', () => {
+    let prevServerTwoService = new ServiceModel(1, 1, 3);
+    let currServerOneService = new ServiceModel(1, 1, 1);
+
+    let startTime = subject.calculateServerTwoStartTime(prevServerTwoService, currServerOneService);
+    expect(startTime).toBe(4);
+
+    prevServerTwoService = new ServiceModel(1, 1, 1);
+    currServerOneService = new ServiceModel(1, 1, 6);
+
+    startTime = subject.calculateServerTwoStartTime(prevServerTwoService, currServerOneService);
+    expect(startTime).toBe(7);
   });
 });
