@@ -1,5 +1,5 @@
 export class ConsumerModel {
-  public waitTime: number;
+  public waitForServerOneTime: number;
   public waitForServerTwoTime: number;
 
   constructor(

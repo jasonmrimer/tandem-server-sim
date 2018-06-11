@@ -55,13 +55,70 @@ export class ServerService {
     return consumer.arrivalTime;
   }
 
-  public calculateIdleTime(currentService: ServiceModel, nextConsumer: ConsumerModel) {
-    if (nextConsumer) {
-      let idleTime = nextConsumer.arrivalTime - currentService.endTime;
-      return idleTime > 0 ? idleTime : 0;
+  public getServerOneIdleTime(
+    prevService: ServiceModel,
+    currService: ServiceModel,
+    currConsumer: ConsumerModel
+  ) {
+    let idleTime = currConsumer.arrivalTime;
+
+    if (prevService) {
+      if (prevService.endTime < currService.startTime) {
+        idleTime = currService.startTime - prevService.endTime;
+      }
     }
 
-    return 0;
+    return idleTime;
+  }
+
+  public calculateServerOneIdleTimes(serverOneServices: ServiceModel[], consumers: ConsumerModel[]) {
+    serverOneServices.map((service, index) => {
+      service.idleTime = this.getServerOneIdleTime(
+        serverOneServices[index - 1],
+        service,
+        consumers[index]
+      )
+    });
+  }
+
+  public calculateServerTwoIdleTimes(serverOneServices: ServiceModel[], serverTwoServices: ServiceModel[]) {
+    serverTwoServices.map((service, index) => {
+      service.idleTime = this.getServerTwoIdleTime(
+        serverOneServices[index],
+        serverTwoServices[index - 1],
+        service
+      )
+    })
+  }
+
+  public getServerTwoIdleTime(
+    currServerOneService: ServiceModel,
+    prevServerTwoService: ServiceModel,
+    currServerTwoService: ServiceModel
+  ) {
+
+    const awaitingServerOne = (prevServerTwo: ServiceModel, currServerTwo: ServiceModel) => {
+      return prevServerTwo.endTime < currServerTwo.startTime;
+    };
+
+    // const awaitingServerTwo = (currServerOne: ServiceModel, currServerTwo: ServiceModel) => {
+    //   return currServerOne.endTime < currServerTwo.startTime;
+    // }
+
+    let idleTime = 0;
+
+    if (prevServerTwoService) {
+
+      if (awaitingServerOne(prevServerTwoService, currServerTwoService)) {
+        idleTime = currServerOneService.endTime - prevServerTwoService.endTime;
+      }
+      //
+      // if (awaitingServerTwo(currServerOneService, currServerTwoService)) {
+      //   idleTime = prevServerTwoService.endTime - currServerOneService.endTime;
+      // }
+    }
+
+    return idleTime;
   }
 
   public calculateWaitTime(currentService: ServiceModel, currentConsumer: ConsumerModel) {
@@ -81,13 +138,13 @@ export class ServerService {
 
   public calculateAverageWait(consumers: ConsumerModel[]) {
     let totalWait = 0;
-    consumers.map(consumer => totalWait += consumer.waitTime);
+    consumers.map(consumer => totalWait += consumer.waitForServerOneTime);
 
     return (consumers.length > 0) ? (totalWait / consumers.length) : 0;
   }
 
   public calculateMaximumWait(consumers: ConsumerModel[]) {
-    return Math.max.apply(Math, consumers.map((consumer) => consumer.waitTime));
+    return Math.max.apply(Math, consumers.map((consumer) => consumer.waitForServerOneTime));
   }
 
   public calculateConsumersServedBeforeLimit(services: ServiceModel[], timeLimit: number) {
@@ -120,7 +177,6 @@ export class ServerService {
   public createServerOneService(
     prevService: ServiceModel,
     currConsumer: ConsumerModel,
-    nextConsumer: ConsumerModel
   ) {
     const startTime = this.calculateStartTime(prevService, currConsumer);
     const seed = Math.random();
@@ -128,8 +184,7 @@ export class ServerService {
 
     let service = new ServiceModel(startTime, seed, duration);
 
-    currConsumer.waitTime = this.calculateWaitTime(service, currConsumer);
-    service.idleTime = this.calculateIdleTime(service, nextConsumer);
+    currConsumer.waitForServerOneTime = this.calculateWaitTime(service, currConsumer);
     return service;
   }
 
@@ -147,14 +202,16 @@ export class ServerService {
   }
 
   private createServices() {
-    this._consumers.map((consumer, index) => {
+    this._consumers.map((consumer) => {
       const prevServerOneService = this._serverOneServices[this._serverOneServices.length - 1];
-      const nextConsumer = this._consumers[index + 1];
-      const serverOneService = this.createServerOneService(prevServerOneService, consumer, nextConsumer);
+      const serverOneService = this.createServerOneService(prevServerOneService, consumer);
       this._serverOneServices.push(serverOneService);
 
       const prevServerTwoService = this._serverTwoServices[this._serverTwoServices.length - 1];
       this._serverTwoServices.push(this.createServerTwoService(prevServerTwoService, serverOneService, consumer));
     })
+
+    this.calculateServerOneIdleTimes(this._serverOneServices, this._consumers);
+    this.calculateServerTwoIdleTimes(this._serverOneServices, this._serverTwoServices);
   }
 }

@@ -19,13 +19,14 @@ export const SimRow = (props: Props) => {
       <span className='seed'>{consumer.seed.toFixed(8)}</span>
       <span className='interarrival-time'>{consumer.interarrivalTime.toFixed(1)}</span>
       <span className='arrival-time'>{consumer.arrivalTime.toFixed(1)}</span>
-      <span className='wait-for-server-one-time'>{consumer.waitTime.toFixed(1)}</span>
+      <span className='wait-for-server-one-time'>{consumer.waitForServerOneTime.toFixed(1)}</span>
+      <span className='wait-for-server-two-time'>{consumer.waitForServerTwoTime.toFixed(1)}</span>
+      <span className='server-one-idle'>{serverOneService.idleTime.toFixed(1)}</span>
       <span className='server-one-start'>{serverOneService.startTime.toFixed(1)}</span>
       <span className='server-one-seed'>{serverOneService.seed.toFixed(8)}</span>
       <span className='server-one-duration'>{serverOneService.duration.toFixed(1)}</span>
       <span className='server-one-end'>{serverOneService.endTime.toFixed(1)}</span>
-      <span className='server-one-idle'>{serverOneService.idleTime.toFixed(1)}</span>
-      <span className='wait-for-server-two-time'>{consumer.waitForServerTwoTime.toFixed(1)}</span>
+      <span className='server-two-idle'>{serverTwoService.idleTime.toFixed(1)}</span>
       <span className='server-two-start'>{serverTwoService.startTime.toFixed(1)}</span>
       <span className='server-two-seed'>{serverTwoService.seed.toFixed(8)}</span>
       <span className='server-two-duration'>{serverTwoService.duration.toFixed(1)}</span>

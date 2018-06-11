@@ -21,7 +21,7 @@ describe('ServerService', () => {
     expect(serverOneService.duration).toBeDefined();
     expect(serverOneService.endTime).toBe(serverOneService.startTime + serverOneService.duration);
     expect(serverOneService.idleTime).toBeGreaterThanOrEqual(0);
-    expect(consumers[1].waitTime).toBeGreaterThan(0);
+    expect(consumers[1].waitForServerOneTime).toBeGreaterThan(0);
     expect(serverTwoService.startTime).toBeGreaterThanOrEqual(serverOneService.endTime);
     expect(subject.serverTwoServices[1].startTime).toBeGreaterThanOrEqual(serverTwoService.endTime);
     expect(serverTwoService.seed).toBeGreaterThanOrEqual(0);
@@ -37,10 +37,58 @@ describe('ServerService', () => {
     expect(nextStartTime).toBe(4);
   });
 
-  it('should calculate idleTime time when there is no consumer waiting', () => {
-    const service = new ServiceModel(1, 2, 3);
-    const nextConsumer = new ConsumerModel(1, 1, 10);
-    const idleTime = subject.calculateIdleTime(service, nextConsumer);
+  it('should calculate idle time for server two when there is no consumer waiting', () => {
+    const serverOneServices = [
+      new ServiceModel(1, 2, 3),
+      new ServiceModel(8, 2, 2),
+      new ServiceModel(10, 2, 3),
+    ];
+
+    const serverTwoServices = [
+      new ServiceModel(4, 2, 3),
+      new ServiceModel(10, 2, 8),
+      new ServiceModel(18, 2, 3),
+    ];
+    subject.calculateServerTwoIdleTimes(serverOneServices, serverTwoServices);
+    expect(serverTwoServices[0].idleTime).toBe(0);
+    expect(serverTwoServices[1].idleTime).toBe(3);
+    expect(serverTwoServices[2].idleTime).toBe(0);
+  });
+
+  it('should return an idle time when waiting on server one', () => {
+    const idleTime = subject.getServerTwoIdleTime(
+      new ServiceModel(1, 1, 5),
+      new ServiceModel(1, 1, 1),
+      new ServiceModel(6, 1, 1)
+    );
+    expect(idleTime).toBe(4)
+  });
+
+  // it('should return an idle time when waiting on server two', () => {
+  //   const idleTime = subject.getServerTwoIdleTime(
+  //     new ServiceModel(1, 1, 5),
+  //     new ServiceModel(1, 1, 9),
+  //     new ServiceModel(10, 1, 1)
+  //   );
+  //   expect(idleTime).toBe(4)
+  // });
+
+  it('should return no idle time when immediate start for server two', () => {
+    const idleTime = subject.getServerTwoIdleTime(
+      new ServiceModel(1, 1, 5),
+      new ServiceModel(1, 1, 7),
+      new ServiceModel(8, 1, 1)
+    );
+    expect(idleTime).toBe(0)
+  });
+
+  it('should return an idle time when waiting on a consumer to arrive', () => {
+    const idleTime = subject.getServerOneIdleTime(
+      new ServiceModel(1, 1, 1),
+      new ServiceModel(8, 1, 4),
+      new ConsumerModel(1, 1, 8)
+    );
+
     expect(idleTime).toBe(6);
   });
 
@@ -71,9 +119,9 @@ describe('ServerService', () => {
     let consumerModel1 = new ConsumerModel(1, 1, 1);
     let consumerModel2 = new ConsumerModel(1, 1, 1);
     let consumerModel3 = new ConsumerModel(1, 1, 1);
-    consumerModel1.waitTime = 1;
-    consumerModel2.waitTime = 2;
-    consumerModel3.waitTime = 3;
+    consumerModel1.waitForServerOneTime = 1;
+    consumerModel2.waitForServerOneTime = 2;
+    consumerModel3.waitForServerOneTime = 3;
 
     const consumers = [
       consumerModel1,
@@ -88,9 +136,9 @@ describe('ServerService', () => {
     let consumerModel1 = new ConsumerModel(1, 1, 1);
     let consumerModel2 = new ConsumerModel(1, 1, 1);
     let consumerModel3 = new ConsumerModel(1, 1, 1);
-    consumerModel1.waitTime = 1;
-    consumerModel2.waitTime = 2;
-    consumerModel3.waitTime = 3;
+    consumerModel1.waitForServerOneTime = 1;
+    consumerModel2.waitForServerOneTime = 2;
+    consumerModel3.waitForServerOneTime = 3;
 
     const consumers = [
       consumerModel1,

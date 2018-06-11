@@ -9,19 +9,20 @@ describe('SimRow', () => {
 
   beforeEach(() => {
     let consumer = new ConsumerModel(1, 2, 3);
-    consumer.waitTime = 2;
+    consumer.waitForServerOneTime = 2;
 
-    let service = new ServiceModel(1, 2, 3);
-    service.idleTime = 0;
+    let serverOneService = new ServiceModel(1, 2, 3);
+    serverOneService.idleTime = 0;
 
     let serverTwoService = new ServiceModel(4, 5, 6);
+    serverTwoService.idleTime = 8
     consumer.waitForServerTwoTime = 4;
 
     subject = shallow(
       <SimRow
         index={1}
         consumer={consumer}
-        serverOneService={service}
+        serverOneService={serverOneService}
         serverTwoService={serverTwoService}
       />
     )
@@ -48,5 +49,6 @@ describe('SimRow', () => {
     expect(parseFloat(subject.find('.server-two-seed').text())).toBe(5);
     expect(parseFloat(subject.find('.server-two-duration').text())).toBe(6);
     expect(parseFloat(subject.find('.server-two-end').text())).toBe(10);
+    expect(parseFloat(subject.find('.server-two-idle').text())).toBe(8);
   });
 });
