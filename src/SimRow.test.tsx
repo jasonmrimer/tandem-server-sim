@@ -12,7 +12,7 @@ describe('SimRow', () => {
       <SimRow
         index={1}
         consumer={new ConsumerModel(1, 2, 3)}
-        service={new ServiceModel(1, 2, 3, 4)}
+        service={new ServiceModel(1, 2, 3)}
       />
     )
   });

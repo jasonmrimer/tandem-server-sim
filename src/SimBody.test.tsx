@@ -13,9 +13,9 @@ describe('SimBody', () => {
     new ConsumerModel(3, 3, 3,)
   ];
   const services = [
-    new ServiceModel(1, 1, 1, 1),
-    new ServiceModel(2, 2, 2, 2),
-    new ServiceModel(3, 3, 3, 3),
+    new ServiceModel(1, 1, 1),
+    new ServiceModel(2, 2, 2),
+    new ServiceModel(3, 3, 3),
   ];
 
   beforeEach(() => {
