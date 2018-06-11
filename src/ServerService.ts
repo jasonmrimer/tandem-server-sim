@@ -9,14 +9,15 @@ export class ServerService {
     this._consumers = consumers;
     this._consumers.map((consumer) => {
       const startTime = consumer.arrivalTime;
-      const serviceSeed = Math.random();
-      const serviceTime = (-0.7) * Math.log(serviceSeed);
+      const seed = Math.random();
+      const duration = (-0.7) * Math.log(seed);
+      const endTime = startTime + duration;
 
-      this._services.push({startTime, serviceSeed, serviceTime})
+      this._services.push({startTime, seed, duration, endTime})
     })
   }
 
-  public get services(){
+  public get services() {
     return this._services;
   }
 }

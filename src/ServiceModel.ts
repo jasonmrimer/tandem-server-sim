@@ -1,8 +1,9 @@
 export class ServiceModel {
   constructor(
     public startTime: number,
-    public serviceSeed: number,
-    public serviceTime: number,
+    public seed: number,
+    public duration: number,
+    public endTime: number,
   ) {
   }
 }

@@ -12,7 +12,7 @@ describe('SimRow', () => {
       <SimRow
         index={1}
         consumer={new ConsumerModel(1, 2, 3)}
-        service={new ServiceModel(1, 2, 3)}
+        service={new ServiceModel(1, 2, 3, 4)}
       />
     )
   });
@@ -26,5 +26,7 @@ describe('SimRow', () => {
   it('should render the service', () => {
     expect(parseFloat(subject.find('.service-start').text())).toBe(1);
     expect(parseFloat(subject.find('.service-seed').text())).toBe(2);
+    expect(parseFloat(subject.find('.service-time').text())).toBe(3);
+    expect(parseFloat(subject.find('.service-end').text())).toBe(4);
   });
 });

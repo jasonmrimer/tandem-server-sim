@@ -17,8 +17,9 @@ export const SimRow = (props: Props) => {
       <span className='interarrival-time'>{props.consumer.interarrivalTime.toFixed(1)}</span>
       <span className='arrival-time'>{props.consumer.arrivalTime.toFixed(1)}</span>
       <span className='service-start'>{props.service.startTime.toFixed(1)}</span>
-      <span className='service-seed'>{props.service.serviceSeed.toFixed(8)}</span>
-      <span className='service-time'>{props.service.serviceTime.toFixed(1)}</span>
+      <span className='service-seed'>{props.service.seed.toFixed(8)}</span>
+      <span className='service-time'>{props.service.duration.toFixed(1)}</span>
+      <span className='service-end'>{props.service.endTime.toFixed(1)}</span>
     </div>
   );
 }
