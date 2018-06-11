@@ -3,7 +3,7 @@ import { ServiceModel } from '../models/ServiceModel';
 
 export class ServerService {
   private _consumers: ConsumerModel[];
-  private _services: ServiceModel[] = [];
+  private _serverOneServices: ServiceModel[] = [];
   private _serverTwoServices: ServiceModel[] = [];
   private _utilization: number = 0;
   private _averageWait: number = 0;
@@ -15,10 +15,10 @@ export class ServerService {
 
     this.createServices();
     
-    this._utilization = this.calculateUtilization(this._services);
+    this._utilization = this.calculateUtilization(this._serverOneServices);
     this._averageWait = this.calculateAverageWait(this._consumers);
     this._maximumWait = this.calculateMaximumWait(this._consumers);
-    this._consumersServed = this.calculateConsumersServedBeforeLimit(this._services, 1000);
+    this._consumersServed = this.calculateConsumersServedBeforeLimit(this._serverOneServices, 1000);
   }
 
 
@@ -26,8 +26,8 @@ export class ServerService {
     return this._utilization;
   }
 
-  public get services() {
-    return this._services;
+  public get serverOneServices() {
+    return this._serverOneServices;
   }
 
   public get serverTwoServices() {
@@ -94,24 +94,30 @@ export class ServerService {
     return services.filter((service) => service.endTime <= timeLimit).length;
   }
 
-  private createServices() {
-    this._consumers.map((consumer, index) => {
-      const prevService = this._services[this._services.length - 1];
-      const nextConsumer = this._consumers[index + 1];
-
-      const startTime = this.calculateStartTime(prevService, consumer);
+  public createServerOneService(
+    prevService: ServiceModel,
+    currConsumer: ConsumerModel,
+    nextConsumer: ConsumerModel
+  ) {
+      const startTime = this.calculateStartTime(prevService, currConsumer);
       const seed = Math.random();
       const duration = (-0.7) * Math.log(seed);
 
       let service = new ServiceModel(startTime, seed, duration);
 
-      consumer.waitTime = this.calculateWaitTime(service, consumer);
+      currConsumer.waitTime = this.calculateWaitTime(service, currConsumer);
       service.idleTime = this.calculateIdleTime(service, nextConsumer);
+      return service;
+  }
 
-      this._services.push(service);
+  private createServices() {
+    this._consumers.map((consumer, index) => {
+      const prevService = this._serverOneServices[this._serverOneServices.length - 1];
+      const nextConsumer = this._consumers[index + 1];
+      const serverOneService = this.createServerOneService(prevService, consumer, nextConsumer);
+      this._serverOneServices.push(serverOneService);
 
-
-      const serverTwoStartTime = service.endTime;
+      const serverTwoStartTime = serverOneService.endTime;
       this._serverTwoServices.push(new ServiceModel(serverTwoStartTime));
     })
   }

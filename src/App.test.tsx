@@ -13,7 +13,7 @@ describe('App', () => {
     subject = shallow(<App/>);
   });
 
-  it('should mount with consumer and server services to pass into children', () => {
+  it('should mount with consumer and server serverOneServices to pass into children', () => {
     expect(subject.state('consumerService')).toBeDefined();
     expect(subject.state('serverService')).toBeDefined();
   });
@@ -38,7 +38,7 @@ describe('App', () => {
 
   it('should hydrate a server 1 service and set the state with provided server', () => {
     const serverService = (subject.state('serverService')) as ServerService;
-    const services = serverService.services;
+    const services = serverService.serverOneServices;
     expect(services.length).toBeGreaterThan(1);
   });
 });

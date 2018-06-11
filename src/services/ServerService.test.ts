@@ -13,9 +13,9 @@ describe('ServerService', () => {
 
     subject.hydrate(consumers);
 
-    let service = subject.services[0];
+    let service = subject.serverOneServices[0];
     let serverTwoServices = subject.serverTwoServices;
-    
+
     expect(service.startTime).toBe(consumers[0].arrivalTime);
     expect(service.seed).toBeGreaterThanOrEqual(0);
     expect(service.seed).toBeLessThan(1);
