@@ -4,6 +4,7 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import { SimTable } from './SimTable';
 import { StyledSimBody } from './SimBody';
 import { ConsumerModel } from './ConsumerModel';
+import { ServiceModel } from './ServiceModel';
 
 describe('SimTable', () => {
   let subject: ShallowWrapper
@@ -27,5 +28,12 @@ describe('SimTable', () => {
     expect(consumers.length).toBeGreaterThan(1);
     expect(consumers[consumers.length - 1].arrivalTime).toBeLessThanOrEqual(1000);
     expect(subject.find(StyledSimBody).prop('consumers')).toBe(consumers);
+  });
+
+  it('should hydrate a server 1 service and set the state with provided server', () => {
+    const services = (subject.state('services')) as ServiceModel[];
+    expect(services.length).toBeGreaterThan(1);
+    expect(services[services.length - 1].startTime).toBeLessThanOrEqual(1000);
+    expect(subject.find(StyledSimBody).prop('services')).toBe(services);
   });
 });

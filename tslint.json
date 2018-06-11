@@ -9,7 +9,8 @@
     "member-access": false,
     "no-console": false,
     "prefer-const": false,
-    "variable-name": false
+    "variable-name": false,
+    "object-literal-sort-keys": false
   },
   "linterOptions": {
     "exclude": [

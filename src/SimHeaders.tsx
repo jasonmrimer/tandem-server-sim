@@ -27,17 +27,17 @@ export const SimHeaders = (props: Props) => {
 
 export const StyledSimHeaders = styled(SimHeaders)`
   display: flex;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
   border-bottom: 0.5px solid #222;
   text-align: right;
   
   .header {
     padding: 8px;
-    width: 200px;
+    width: 120px;
     
     .unit-of-measure {
-      font-size: 16px;
+      font-size: 12px;
       font-weight: 400;
     }
   }

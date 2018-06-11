@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea80114c-1997-4ecb-823d-e8411d52cff6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ConsumerService.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ConsumerService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerService.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServiceModel.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SimBody.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimBody.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimBody.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimHeaders.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimHeaders.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimRow.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimRow.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimRow.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimTable.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimTable.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Simulation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/tslint.json" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,68 +22,121 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Simulation.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Simulation.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimTable.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/SimTable.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
-              <caret line="47" column="21" selection-end-line="49" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimHeaders.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SimHeaders.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="2" lean-forward="true" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimBody.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SimBody.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimRow.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SimRow.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="2" lean-forward="true" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="SimBody.test.tsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/SimBody.test.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="289">
+                  <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SimBody.tsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/SimBody.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="595">
+                  <caret line="35" column="24" lean-forward="true" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SimRow.test.tsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/SimRow.test.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ServiceModel.ts" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/ServiceModel.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="68">
+                  <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SimTable.tsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/SimTable.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="437">
+                  <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ServerService.test.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ServerService.test.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="102">
+                  <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+                  <folding>
+                    <element signature="e#0#48#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="SimRow.tsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/SimRow.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="550">
+                  <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ServerService.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ServerService.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="357">
+                  <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#0#48#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SimHeaders.tsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/SimHeaders.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="493">
+                  <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -102,19 +156,22 @@
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/ConsumerModel.ts" />
-        <option value="$PROJECT_DIR$/src/SimBody.test.tsx" />
         <option value="$PROJECT_DIR$/src/HeaderModel.ts" />
         <option value="$PROJECT_DIR$/src/SimHeaders.test.tsx" />
         <option value="$PROJECT_DIR$/src/ConsumerService.test.ts" />
-        <option value="$PROJECT_DIR$/src/SimTable.test.tsx" />
-        <option value="$PROJECT_DIR$/src/SimRow.test.tsx" />
         <option value="$PROJECT_DIR$/src/ConsumerService.ts" />
-        <option value="$PROJECT_DIR$/tslint.json" />
         <option value="$PROJECT_DIR$/src/Simulation.tsx" />
+        <option value="$PROJECT_DIR$/src/ServerService.test.ts" />
+        <option value="$PROJECT_DIR$/src/SimTable.test.tsx" />
+        <option value="$PROJECT_DIR$/src/SimBody.tsx" />
+        <option value="$PROJECT_DIR$/tslint.json" />
+        <option value="$PROJECT_DIR$/src/SimRow.test.tsx" />
+        <option value="$PROJECT_DIR$/src/SimBody.test.tsx" />
+        <option value="$PROJECT_DIR$/src/SimTable.tsx" />
+        <option value="$PROJECT_DIR$/src/ServiceModel.ts" />
+        <option value="$PROJECT_DIR$/src/ServerService.ts" />
         <option value="$PROJECT_DIR$/src/SimRow.tsx" />
         <option value="$PROJECT_DIR$/src/SimHeaders.tsx" />
-        <option value="$PROJECT_DIR$/src/SimBody.tsx" />
-        <option value="$PROJECT_DIR$/src/SimTable.tsx" />
       </list>
     </option>
   </component>
@@ -127,8 +184,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="1418" />
@@ -186,7 +242,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.SimRow.should render the consumer">
+  <component name="RunManager" selected="Jest.SimBody">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -206,33 +262,44 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ConsumerService.should create consumers until clock reaches maximum time" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="SimBody" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <jest-options value="--env=jsdom" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/SimBody.test.tsx" />
+      <test-names>
+        <test-name value="SimBody" />
+      </test-names>
+    </configuration>
+    <configuration name="SimBody.should render a consumer for each seed" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <jest-options value="--env=jsdom" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/ConsumerService.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/SimBody.test.tsx" />
       <test-names>
-        <test-name value="ConsumerService" />
-        <test-name value="should create consumers until clock reaches maximum time" />
+        <test-name value="SimBody" />
+        <test-name value="should render a consumer for each seed" />
       </test-names>
     </configuration>
-    <configuration name="SimHeaders.should render headers with text" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="SimRow" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <jest-options value="--env=jsdom" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/SimHeaders.test.tsx" />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/SimRow.test.tsx" />
       <test-names>
-        <test-name value="SimHeaders" />
-        <test-name value="should render headers with text" />
+        <test-name value="SimRow" />
       </test-names>
     </configuration>
-    <configuration name="SimRow.should render the consumer" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="SimRow.should render the service" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
@@ -242,22 +309,10 @@
       <test-file value="$PROJECT_DIR$/src/SimRow.test.tsx" />
       <test-names>
         <test-name value="SimRow" />
-        <test-name value="should render the consumer" />
+        <test-name value="should render the service" />
       </test-names>
     </configuration>
-    <configuration name="SimTable" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <working-dir value="$PROJECT_DIR$" />
-      <jest-options value="--env=jsdom" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/SimTable.test.tsx" />
-      <test-names>
-        <test-name value="SimTable" />
-      </test-names>
-    </configuration>
-    <configuration name="SimTable.should hydrate a consumer service and set the state with provided consumers" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="SimTable.should hydrate a server 1 service and set the state with provided server" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
@@ -267,7 +322,7 @@
       <test-file value="$PROJECT_DIR$/src/SimTable.test.tsx" />
       <test-names>
         <test-name value="SimTable" />
-        <test-name value="should hydrate a consumer service and set the state with provided consumers" />
+        <test-name value="should hydrate a server 1 service and set the state with provided server" />
       </test-names>
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
@@ -301,19 +356,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Jest.SimTable" />
-      <item itemvalue="Jest.SimHeaders.should render headers with text" />
-      <item itemvalue="Jest.ConsumerService.should create consumers until clock reaches maximum time" />
-      <item itemvalue="Jest.SimTable.should hydrate a consumer service and set the state with provided consumers" />
-      <item itemvalue="Jest.SimRow.should render the consumer" />
+      <item itemvalue="Jest.SimTable.should hydrate a server 1 service and set the state with provided server" />
+      <item itemvalue="Jest.SimBody.should render a consumer for each seed" />
+      <item itemvalue="Jest.SimRow.should render the service" />
+      <item itemvalue="Jest.SimRow" />
+      <item itemvalue="Jest.SimBody" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.SimRow.should render the consumer" />
-        <item itemvalue="Jest.SimTable" />
-        <item itemvalue="Jest.SimTable.should hydrate a consumer service and set the state with provided consumers" />
-        <item itemvalue="Jest.ConsumerService.should create consumers until clock reaches maximum time" />
-        <item itemvalue="Jest.SimHeaders.should render headers with text" />
+        <item itemvalue="Jest.SimBody" />
+        <item itemvalue="Jest.SimRow" />
+        <item itemvalue="Jest.SimRow.should render the service" />
+        <item itemvalue="Jest.SimBody.should render a consumer for each seed" />
+        <item itemvalue="Jest.SimTable.should hydrate a server 1 service and set the state with provided server" />
       </list>
     </recent_temporary>
   </component>
@@ -327,47 +382,47 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528423413708</updated>
-      <workItem from="1528423414912" duration="28340000" />
+      <workItem from="1528423414912" duration="32815000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 56m 01s.xml">
-      <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="SimBody_should_render_a_consumer_for_each_seed - 2018.06.10 at 20h 25m 40s.xml">
+      <configuration name="SimBody.should render a consumer for each seed" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 56m 36s.xml">
-      <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="SimRow_should_render_the_service - 2018.06.10 at 20h 26m 32s.xml">
+      <configuration name="SimRow.should render the service" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 58m 02s.xml">
-      <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="SimRow_should_render_the_service - 2018.06.10 at 20h 26m 48s.xml">
+      <configuration name="SimRow.should render the service" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="SimHeaders_should_render_headers_with_text - 2018.06.09 at 18h 58m 17s.xml">
-      <configuration name="SimHeaders.should render headers with text" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="SimRow_should_render_the_service - 2018.06.10 at 20h 27m 18s.xml">
+      <configuration name="SimRow.should render the service" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="ConsumerService_should_create_consumers_until_clock_reaches_maximum_time - 2018.06.10 at 18h 58m 48s.xml">
-      <configuration name="ConsumerService.should create consumers until clock reaches maximum time" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="SimRow_should_render_the_service - 2018.06.10 at 20h 27m 56s.xml">
+      <configuration name="SimRow.should render the service" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="SimTable_should_hydrate_a_consumer_service_and_set_the_state_with_provided_consumers - 2018.06.10 at 19h 00m 27s.xml">
-      <configuration name="SimTable.should hydrate a consumer service and set the state with provided consumers" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="SimRow - 2018.06.10 at 20h 28m 02s.xml">
+      <configuration name="SimRow" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="SimTable_should_hydrate_a_consumer_service_and_set_the_state_with_provided_consumers - 2018.06.10 at 19h 02m 50s.xml">
-      <configuration name="SimTable.should hydrate a consumer service and set the state with provided consumers" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="SimRow - 2018.06.10 at 20h 28m 49s.xml">
+      <configuration name="SimRow" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="SimTable - 2018.06.10 at 19h 04m 29s.xml">
-      <configuration name="SimTable" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="SimBody - 2018.06.10 at 20h 28m 54s.xml">
+      <configuration name="SimBody" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="SimRow_should_render_the_consumer - 2018.06.10 at 19h 05m 35s.xml">
-      <configuration name="SimRow.should render the consumer" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="SimBody - 2018.06.10 at 20h 45m 17s.xml">
+      <configuration name="SimBody" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="SimRow_should_render_the_consumer - 2018.06.10 at 19h 06m 10s.xml">
-      <configuration name="SimRow.should render the consumer" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="SimBody - 2018.06.10 at 20h 45m 23s.xml">
+      <configuration name="SimBody" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20851000" />
+    <option name="totallyTimeSpent" value="25326000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="22" width="1280" height="1418" extended-state="0" />
+    <frame x="0" y="22" width="2560" height="1418" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
@@ -515,13 +570,6 @@
     <entry file="file://$PROJECT_DIR$/tsconfig.test.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -538,16 +586,6 @@
           <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SimBody.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -576,16 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SimTable.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ConsumerService.test.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -600,23 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tslint.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SimRow.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Simulation.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -627,20 +638,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SimRow.tsx">
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="2" lean-forward="true" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+        <state relative-caret-position="306">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tslint.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SimTable.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SimHeaders.tsx">
+    <entry file="file://$PROJECT_DIR$/src/ServerService.test.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="2" lean-forward="true" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
+        <state relative-caret-position="102">
+          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SimRow.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -649,8 +684,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SimBody.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+        <state relative-caret-position="595">
+          <caret line="35" column="24" lean-forward="true" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SimBody.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -659,8 +704,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SimTable.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="47" column="21" selection-end-line="49" selection-end-column="2" />
+        <state relative-caret-position="437">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServiceModel.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServerService.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SimRow.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SimHeaders.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

@@ -3,9 +3,11 @@ import { StyledSimRow } from './SimRow';
 import styled from 'styled-components';
 import * as classNames from 'classnames';
 import { ConsumerModel } from './ConsumerModel';
+import { ServiceModel } from './ServiceModel';
 
 interface Props {
   consumers: ConsumerModel[];
+  services: ServiceModel[];
   className?: string;
 }
 
@@ -15,6 +17,7 @@ export const SimBody = (props: Props) => {
       return (
         <StyledSimRow
           consumer={consumer}
+          service={props.services[index]}
           index={index}
           key={index}
         />);
