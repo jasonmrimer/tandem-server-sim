@@ -1,4 +1,4 @@
-import { ConsumerModel } from './ConsumerModel';
+import { ConsumerModel } from '../models/ConsumerModel';
 
 export class ConsumerService {
   private _simClock: number = 0.0;

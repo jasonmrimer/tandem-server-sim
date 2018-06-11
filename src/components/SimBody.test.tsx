@@ -2,8 +2,8 @@ import * as React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { SimBody } from './SimBody';
 import { StyledSimRow } from './SimRow';
-import { ConsumerModel } from './ConsumerModel';
-import { ServiceModel } from './ServiceModel';
+import { ConsumerModel } from '../models/ConsumerModel';
+import { ServiceModel } from '../models/ServiceModel';
 
 describe('SimBody', () => {
   let subject: ShallowWrapper;

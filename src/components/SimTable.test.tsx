@@ -3,8 +3,8 @@ import { StyledSimHeaders } from './SimHeaders';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { SimTable } from './SimTable';
 import { StyledSimBody } from './SimBody';
-import { ConsumerModel } from './ConsumerModel';
-import { ServiceModel } from './ServiceModel';
+import { ConsumerModel } from '../models/ConsumerModel';
+import { ServiceModel } from '../models/ServiceModel';
 
 describe('SimTable', () => {
   let subject: ShallowWrapper

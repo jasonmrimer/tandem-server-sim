@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { StyledSimHeaders } from './SimHeaders';
 import { StyledSimBody } from './SimBody';
-import { ConsumerModel } from './ConsumerModel';
-import { HeaderModel } from './HeaderModel';
-import { ConsumerService } from './ConsumerService';
+import { ConsumerModel } from '../models/ConsumerModel';
+import { HeaderModel } from '../models/HeaderModel';
+import { ConsumerService } from '../services/ConsumerService';
 import styled from 'styled-components';
-import { ServerService } from './ServerService';
-import { ServiceModel } from './ServiceModel';
+import { ServerService } from '../services/ServerService';
+import { ServiceModel } from '../models/ServiceModel';
 
 interface Props {
   className?: string;
@@ -42,6 +42,7 @@ export class SimTable extends React.Component<Props, State> {
       new HeaderModel('Consumer Seed', 'U(0,1)'),
       new HeaderModel('Interarrival Time', '{-1 * ln(seed)} [minutes]'),
       new HeaderModel('Arrival Time', '[minutes]'),
+      new HeaderModel('Wait Time', '[minutes]'),
       new HeaderModel('S1 Start', '[minutes]'),
       new HeaderModel('S1 Seed', 'U(0,1)'),
       new HeaderModel('S1 Service', '{-0.7 * ln(seed)} [minutes]'),

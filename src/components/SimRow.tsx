@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { ConsumerModel } from './ConsumerModel';
-import { ServiceModel } from './ServiceModel';
+import { ConsumerModel } from '../models/ConsumerModel';
+import { ServiceModel } from '../models/ServiceModel';
 
 interface Props {
   index: number;
@@ -16,6 +16,7 @@ export const SimRow = (props: Props) => {
       <span className='seed'>{props.consumer.seed.toFixed(8)}</span>
       <span className='interarrival-time'>{props.consumer.interarrivalTime.toFixed(1)}</span>
       <span className='arrival-time'>{props.consumer.arrivalTime.toFixed(1)}</span>
+      <span className='wait-time'>{props.consumer.waitTime.toFixed(1)}</span>
       <span className='service-start'>{props.service.startTime.toFixed(1)}</span>
       <span className='service-seed'>{props.service.seed.toFixed(8)}</span>
       <span className='service-time'>{props.service.duration.toFixed(1)}</span>

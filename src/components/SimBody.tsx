@@ -2,8 +2,8 @@ import * as React from 'react';
 import { StyledSimRow } from './SimRow';
 import styled from 'styled-components';
 import * as classNames from 'classnames';
-import { ConsumerModel } from './ConsumerModel';
-import { ServiceModel } from './ServiceModel';
+import { ConsumerModel } from '../models/ConsumerModel';
+import { ServiceModel } from '../models/ServiceModel';
 
 interface Props {
   consumers: ConsumerModel[];

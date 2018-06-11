@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import * as classNames from 'classnames';
-import { HeaderModel } from './HeaderModel';
+import { HeaderModel } from '../models/HeaderModel';
 
 interface Props {
   headers: HeaderModel[],

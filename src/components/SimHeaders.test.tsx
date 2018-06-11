@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { SimHeaders } from './SimHeaders';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { HeaderModel } from './HeaderModel';
+import { HeaderModel } from '../models/HeaderModel';
 
 describe('SimHeaders', () => {
   let subject: ShallowWrapper;

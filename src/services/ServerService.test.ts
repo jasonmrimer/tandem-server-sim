@@ -1,6 +1,6 @@
-import { ConsumerModel } from './ConsumerModel';
+import { ConsumerModel } from '../models/ConsumerModel';
 import { ServerService } from './ServerService';
-import { ServiceModel } from './ServiceModel';
+import { ServiceModel } from '../models/ServiceModel';
 
 describe('ServerService', () => {
   let subject = new ServerService();
@@ -8,7 +8,7 @@ describe('ServerService', () => {
   it('should hydrate with consumers and start service at arrival times', () => {
     const consumers = [
       new ConsumerModel(1, 2, 3),
-      new ConsumerModel(1, 1, 1)
+      new ConsumerModel(1, 1, 3)
     ];
 
     subject.hydrate(consumers);
@@ -20,6 +20,7 @@ describe('ServerService', () => {
     expect(service.duration).toBeDefined();
     expect(service.endTime).toBe(service.startTime + service.duration);
     expect(service.idleTime).toBeGreaterThanOrEqual(0);
+    expect(consumers[1].waitTime).toBeGreaterThan(0);
   });
 
   it('should serve next consumers only after the previous job ends', () => {
@@ -34,5 +35,12 @@ describe('ServerService', () => {
     const nextConsumer = new ConsumerModel(1, 1, 10);
     const idleTime = subject.calculateIdleTime(service, nextConsumer);
     expect(idleTime).toBe(6);
+  });
+
+  it('should cause the consumer to wait when there is no service available', () => {
+    const currConsumer = new ConsumerModel(1, 1, 1);
+    const currService = new ServiceModel(5, 1, 1);
+    const waitTime = subject.calculateWaitTime(currService, currConsumer);
+    expect(waitTime).toBe(4);
   });
 });
