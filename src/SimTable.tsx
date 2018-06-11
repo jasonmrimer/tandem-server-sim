@@ -46,6 +46,7 @@ export class SimTable extends React.Component<Props, State> {
       new HeaderModel('S1 Seed', 'U(0,1)'),
       new HeaderModel('S1 Service', '{-0.7 * ln(seed)} [minutes]'),
       new HeaderModel('S1 End', '[minutes]'),
+      new HeaderModel('S1 Idle', '[minutes]'),
     ];
 
     return (

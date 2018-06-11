@@ -33,7 +33,6 @@ describe('SimTable', () => {
   it('should hydrate a server 1 service and set the state with provided server', () => {
     const services = (subject.state('services')) as ServiceModel[];
     expect(services.length).toBeGreaterThan(1);
-    expect(services[services.length - 1].startTime).toBeLessThanOrEqual(1000);
     expect(subject.find(StyledSimBody).prop('services')).toBe(services);
   });
 });

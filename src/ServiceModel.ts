@@ -1,4 +1,5 @@
 export class ServiceModel {
+  public idleTime: number;
   private _endTime: number;
 
   constructor(
