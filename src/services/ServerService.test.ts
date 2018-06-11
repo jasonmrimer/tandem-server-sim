@@ -14,6 +14,8 @@ describe('ServerService', () => {
     subject.hydrate(consumers);
 
     let service = subject.services[0];
+    let serverTwoServices = subject.serverTwoServices;
+    
     expect(service.startTime).toBe(consumers[0].arrivalTime);
     expect(service.seed).toBeGreaterThanOrEqual(0);
     expect(service.seed).toBeLessThan(1);
@@ -21,6 +23,7 @@ describe('ServerService', () => {
     expect(service.endTime).toBe(service.startTime + service.duration);
     expect(service.idleTime).toBeGreaterThanOrEqual(0);
     expect(consumers[1].waitTime).toBeGreaterThan(0);
+    expect(serverTwoServices[0].startTime).toBeGreaterThanOrEqual(service.endTime);
   });
 
   it('should serve next consumers only after the previous job ends', () => {

@@ -14,6 +14,7 @@ describe('SimTable', () => {
       <SimTable
         consumers={[new ConsumerModel(1,1,1)]}
         services={[new ServiceModel(1,1,1)]}
+        serverTwoServices={[new ServiceModel(2)]}
       />
     );
   });

@@ -37,6 +37,7 @@ class App extends React.Component<Props, State> {
       <StyledSimulation
         consumers={this.state.consumerService.consumers}
         services={this.state.serverService.services}
+        serverTwoServices={this.state.serverService.serverTwoServices}
       />
     );
 

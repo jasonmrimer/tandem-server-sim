@@ -14,11 +14,14 @@ describe('SimRow', () => {
     let service = new ServiceModel(1, 2, 3);
     service.idleTime = 0;
 
+    let serverTwoService = new ServiceModel(1);
+
     subject = shallow(
       <SimRow
         index={1}
         consumer={consumer}
         service={service}
+        serverTwoService={serverTwoService}
       />
     )
   });
@@ -36,5 +39,9 @@ describe('SimRow', () => {
     expect(parseFloat(subject.find('.service-time').text())).toBe(3);
     expect(parseFloat(subject.find('.service-end').text())).toBe(4);
     expect(parseFloat(subject.find('.service-idle').text())).toBe(0);
+  });
+
+  it('should render service from server two', () => {
+    expect(parseFloat(subject.find('.server-two-start').text())).toBe(1);
   });
 });

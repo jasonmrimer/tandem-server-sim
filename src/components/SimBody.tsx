@@ -8,6 +8,7 @@ import { ServiceModel } from '../models/ServiceModel';
 interface Props {
   consumers: ConsumerModel[];
   services: ServiceModel[];
+  serverTwoServices: ServiceModel[];
   className?: string;
 }
 
@@ -18,6 +19,7 @@ export const SimBody = (props: Props) => {
         <StyledSimRow
           consumer={consumer}
           service={props.services[index]}
+          serverTwoService={props.serverTwoServices[index]}
           index={index}
           key={index}
         />);
@@ -30,7 +32,7 @@ export const SimBody = (props: Props) => {
     <div className={classNames(props.className, 'sim-body')}>
       {renderRows(props.consumers)}
     </div>
-  )
+)
 }
 
 export const StyledSimBody = styled(SimBody)`

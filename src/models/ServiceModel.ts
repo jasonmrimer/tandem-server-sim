@@ -4,8 +4,8 @@ export class ServiceModel {
 
   constructor(
     public startTime: number,
-    public seed: number,
-    public duration: number,
+    public seed: number = 0,
+    public duration: number = 0,
   ) {
     this._endTime = startTime + duration;
   }

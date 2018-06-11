@@ -9,31 +9,34 @@ import { ServiceModel } from '../models/ServiceModel';
 interface Props {
   consumers: ConsumerModel[];
   services: ServiceModel[];
+  serverTwoServices: ServiceModel[];
   className?: string;
 }
 
 export const SimTable = (props: Props) => {
-    const headers = [
-      new HeaderModel('Consumer Seed', 'U(0,1)'),
-      new HeaderModel('Interarrival Time', '{-1 * ln(seed)} [minutes]'),
-      new HeaderModel('Arrival Time', '[minutes]'),
-      new HeaderModel('Wait Time', '[minutes]'),
-      new HeaderModel('S1 Start', '[minutes]'),
-      new HeaderModel('S1 Seed', 'U(0,1)'),
-      new HeaderModel('S1 Service', '{-0.7 * ln(seed)} [minutes]'),
-      new HeaderModel('S1 End', '[minutes]'),
-      new HeaderModel('S1 Idle', '[minutes]'),
-    ];
+  const headers = [
+    new HeaderModel('Consumer Seed', 'U(0,1)'),
+    new HeaderModel('Interarrival Time', '{-1 * ln(seed)} [minutes]'),
+    new HeaderModel('Arrival Time', '[minutes]'),
+    new HeaderModel('Wait Time', '[minutes]'),
+    new HeaderModel('S1 Start', '[minutes]'),
+    new HeaderModel('S1 Seed', 'U(0,1)'),
+    new HeaderModel('S1 Service', '{-0.7 * ln(seed)} [minutes]'),
+    new HeaderModel('S1 End', '[minutes]'),
+    new HeaderModel('S1 Idle', '[minutes]'),
+    new HeaderModel('S2 Start', '[minutes]'),
+  ];
 
-    return (
-      <div className={props.className}>
-        <StyledSimHeaders headers={headers}/>
-        <StyledSimBody
-          consumers={props.consumers}
-          services={props.services}
-        />
-      </div>
-    )
+  return (
+    <div className={props.className}>
+      <StyledSimHeaders headers={headers}/>
+      <StyledSimBody
+        consumers={props.consumers}
+        services={props.services}
+        serverTwoServices={props.serverTwoServices}
+      />
+    </div>
+  )
 }
 
 export const StyledSimTable = styled(SimTable)`

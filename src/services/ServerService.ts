@@ -4,6 +4,7 @@ import { ServiceModel } from '../models/ServiceModel';
 export class ServerService {
   private _consumers: ConsumerModel[];
   private _services: ServiceModel[] = [];
+  private _serverTwoServices: ServiceModel[] = [];
   private _utilization: number = 0;
   private _averageWait: number = 0;
   private _maximumWait: number = 0;
@@ -27,6 +28,10 @@ export class ServerService {
 
   public get services() {
     return this._services;
+  }
+
+  public get serverTwoServices() {
+    return this._serverTwoServices;
   }
 
   public get averageWait() {
@@ -86,7 +91,7 @@ export class ServerService {
   }
 
   public calculateConsumersServedBeforeLimit(services: ServiceModel[], timeLimit: number) {
-    return services.filter((service) => service.endTime <= 1000).length;
+    return services.filter((service) => service.endTime <= timeLimit).length;
   }
 
   private createServices() {
@@ -103,7 +108,11 @@ export class ServerService {
       consumer.waitTime = this.calculateWaitTime(service, consumer);
       service.idleTime = this.calculateIdleTime(service, nextConsumer);
 
-      this._services.push(service)
+      this._services.push(service);
+
+
+      const serverTwoStartTime = service.endTime;
+      this._serverTwoServices.push(new ServiceModel(serverTwoStartTime));
     })
   }
 }
