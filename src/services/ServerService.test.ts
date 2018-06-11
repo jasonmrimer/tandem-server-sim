@@ -24,9 +24,9 @@ describe('ServerService', () => {
   });
 
   it('should serve next consumers only after the previous job ends', () => {
-    const services = [new ServiceModel(1, 2, 3)];
+    const previousService = new ServiceModel(1, 2, 3);
     const nextConsumer = new ConsumerModel(1, 1, 1);
-    const nextStartTime = subject.calculateStartTime(services, nextConsumer);
+    const nextStartTime = subject.calculateStartTime(previousService, nextConsumer);
     expect(nextStartTime).toBe(4);
   });
 
@@ -51,5 +51,22 @@ describe('ServerService', () => {
       new ServiceModel(8, 1, 2),
     ];
     expect(subject.calculateUtilization(services)).toBe(0.6);
+  });
+
+  it('should calculate the average wait time for its consumers', () => {
+    let consumerModel1 = new ConsumerModel(1, 1, 1);
+    let consumerModel2 = new ConsumerModel(1, 1, 1);
+    let consumerModel3 = new ConsumerModel(1, 1, 1);
+    consumerModel1.waitTime = 1;
+    consumerModel2.waitTime = 2;
+    consumerModel3.waitTime = 3;
+
+    const consumers = [
+      consumerModel1,
+      consumerModel2,
+      consumerModel3,
+    ]
+
+    expect(subject.calculateAverageWait(consumers)).toBe(2);
   });
 });

@@ -11,8 +11,8 @@ describe('Stats', () => {
   beforeEach(() => {
     serverService = new ServerService();
     serverService.hydrate([
-      new ConsumerModel(1,1,1),
-      new ConsumerModel(2,2,2),
+      new ConsumerModel(1, 1, 1),
+      new ConsumerModel(2, 2, 2),
     ])
 
     subject = shallow(
@@ -22,8 +22,14 @@ describe('Stats', () => {
   });
 
   it('should render the server utilization', () => {
-    expect(subject.find('.utilization').find('span').at(0).text()).toBe('Server utilization:');
-    expect(subject.find('.utilization').find('span').at(1).text()).toContain(
-      `${(serverService.utilization * 100).toFixed(2)}`);
+    expect(subject.find('.utilization').find('span').at(0).text()).toBe('Server utilization [%]:');
+    expect(subject.find('.utilization').find('span').at(1).text()).toBe(
+      (serverService.utilization * 100).toFixed(2));
+  });
+
+  it('should render the average wait time', () => {
+    expect(subject.find('.average-wait').find('span').at(0).text()).toBe('Average wait time [minutes]:');
+    expect(subject.find('.average-wait').find('span').at(1).text()).toContain(
+      `${(serverService.averageWait).toFixed(1)}`);
   });
 });

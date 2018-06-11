@@ -5,11 +5,17 @@ export class ServerService {
   private _consumers: ConsumerModel[];
   private _services: ServiceModel[] = [];
   private _utilization: number = 0;
+  private _averageWait: number = 0;
 
   public hydrate(consumers: ConsumerModel[]) {
     this._consumers = consumers;
+
     this.createServices();
+    
+    this._utilization = this.calculateUtilization(this._services);
+    this._averageWait = this.calculateAverageWait(this._consumers);
   }
+
 
   public get utilization() {
     return this._utilization;
@@ -19,37 +25,32 @@ export class ServerService {
     return this._services;
   }
 
-  public calculateStartTime(services: ServiceModel[], consumer: ConsumerModel) {
-    let startTime = consumer.arrivalTime;
-    const previousService = services[services.length - 1];
+  public get averageWait() {
+    return this._averageWait;
+  }
 
-    if (previousService && previousService.endTime > consumer.arrivalTime) {
-      return previousService.endTime;
+  public calculateStartTime(previousService: ServiceModel, consumer: ConsumerModel) {
+    if (previousService) {
+      let endTime = previousService.endTime;
+      return endTime > consumer.arrivalTime ? endTime : consumer.arrivalTime;
     }
 
-    return startTime;
+    return consumer.arrivalTime;
   }
 
   public calculateIdleTime(currentService: ServiceModel, nextConsumer: ConsumerModel) {
-    let idleTime = 0;
-
     if (nextConsumer) {
-      if (currentService.endTime < nextConsumer.arrivalTime) {
-        idleTime = nextConsumer.arrivalTime - currentService.endTime;
-      }
+      let idleTime = nextConsumer.arrivalTime - currentService.endTime;
+      return idleTime > 0 ? idleTime : 0;
     }
 
-    return idleTime;
+    return 0;
   }
 
   public calculateWaitTime(currentService: ServiceModel, currentConsumer: ConsumerModel) {
-    let waitTime = 0;
+    let waitTime = currentService.startTime - currentConsumer.arrivalTime;
 
-    if (currentService.startTime > currentConsumer.arrivalTime) {
-      waitTime = currentService.startTime - currentConsumer.arrivalTime;
-    }
-
-    return waitTime;
+    return waitTime > 0 ? waitTime : 0;
   }
 
   public calculateUtilization(services: ServiceModel[]) {
@@ -61,19 +62,29 @@ export class ServerService {
 
   }
 
+  public calculateAverageWait(consumers: ConsumerModel[]) {
+    let totalWait = 0;
+    consumers.map(consumer => totalWait += consumer.waitTime);
+
+    return (consumers.length > 0) ? (totalWait / consumers.length) : 0;
+  }
+
   private createServices() {
     this._consumers.map((consumer, index) => {
-      const startTime = this.calculateStartTime(this._services, consumer);
+      const prevService = this._services[this._services.length - 1];
+      const nextConsumer = this._consumers[index + 1];
 
+      const startTime = this.calculateStartTime(prevService, consumer);
       const seed = Math.random();
       const duration = (-0.7) * Math.log(seed);
+
       let service = new ServiceModel(startTime, seed, duration);
 
       consumer.waitTime = this.calculateWaitTime(service, consumer);
-      service.idleTime = this.calculateIdleTime(service, this._consumers[index + 1]);
+
+      service.idleTime = this.calculateIdleTime(service, nextConsumer);
 
       this._services.push(service)
-      this._utilization = this.calculateUtilization(this._services);
     })
   }
 }
