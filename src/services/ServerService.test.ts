@@ -69,4 +69,21 @@ describe('ServerService', () => {
 
     expect(subject.calculateAverageWait(consumers)).toBe(2);
   });
+
+  it('should calculate the max wait time for consumers', () => {
+    let consumerModel1 = new ConsumerModel(1, 1, 1);
+    let consumerModel2 = new ConsumerModel(1, 1, 1);
+    let consumerModel3 = new ConsumerModel(1, 1, 1);
+    consumerModel1.waitTime = 1;
+    consumerModel2.waitTime = 2;
+    consumerModel3.waitTime = 3;
+
+    const consumers = [
+      consumerModel1,
+      consumerModel2,
+      consumerModel3,
+    ]
+
+    expect(subject.calculateMaximumWait(consumers)).toBe(3);
+  });
 });

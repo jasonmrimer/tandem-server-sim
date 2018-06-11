@@ -10,6 +10,8 @@ describe('Stats', () => {
 
   beforeEach(() => {
     serverService = new ServerService();
+
+
     serverService.hydrate([
       new ConsumerModel(1, 1, 1),
       new ConsumerModel(2, 2, 2),
@@ -31,5 +33,11 @@ describe('Stats', () => {
     expect(subject.find('.average-wait').find('span').at(0).text()).toBe('Average wait time [minutes]:');
     expect(subject.find('.average-wait').find('span').at(1).text()).toContain(
       `${(serverService.averageWait).toFixed(1)}`);
+  });
+
+  it('should render the max wait time', () => {
+    expect(subject.find('.maximum-wait').find('span').at(0).text()).toBe('Maximum wait time [minutes]:');
+    expect(subject.find('.maximum-wait').find('span').at(1).text()).toContain(
+      `${(serverService.maximumWait).toFixed(1)}`);
   });
 });
