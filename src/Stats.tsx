@@ -24,13 +24,13 @@ export const Stats = (props: Props) => {
               <span>Utilization [%]:</span>
               <span>{(props.serverService.serverOneUtilization * 100).toFixed(2)}</span>
             </div>
-            <div className='average-wait'>
-              <span>Average wait time [minutes]:</span>
-              <span>{props.serverService.averageWaitForServerOne.toFixed(1)}</span>
-            </div>
             <div className='maximum-wait'>
               <span>Maximum wait time [minutes]:</span>
               <span>{props.serverService.maximumWaitForServerOne.toFixed(1)}</span>
+            </div>
+            <div className='average-wait'>
+              <span>Average wait time [minutes]:</span>
+              <span>{props.serverService.averageWaitForServerOne.toFixed(1)}</span>
             </div>
           </div>
           <div className='server-two'>
@@ -39,13 +39,13 @@ export const Stats = (props: Props) => {
               <span>Utilization [%]:</span>
               <span>{(props.serverService.serverTwoUtilization * 100).toFixed(2)}</span>
             </div>
-            <div className='average-wait'>
-              <span>Average wait time [minutes]:</span>
-              <span>{props.serverService.averageWaitForServerTwo.toFixed(1)}</span>
-            </div>
             <div className='maximum-wait'>
               <span>Maximum wait time [minutes]:</span>
               <span>{props.serverService.maximumWaitForServerTwo.toFixed(1)}</span>
+            </div>
+            <div className='average-wait'>
+              <span>Average wait time [minutes]:</span>
+              <span>{props.serverService.averageWaitForServerTwo.toFixed(1)}</span>
             </div>
           </div>
         </div>
