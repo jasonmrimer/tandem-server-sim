@@ -146,7 +146,7 @@ describe('ServerService', () => {
       consumerModel3,
     ]
 
-    expect(subject.calculateMaximumWait(consumers)).toBe(3);
+    expect(subject.calculateMaximumWaitForServerOne(consumers)).toBe(3);
   });
 
   it('should calculate the number of consumers served before 1000 minutes', () => {

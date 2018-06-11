@@ -14,76 +14,95 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ServerService.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/ServerService.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="133" selection-start-line="133" selection-end-line="139" selection-end-column="3" />
-              <folding>
-                <element signature="n#!!block;n#hydrate#0;n#ServerService#0" />
-                <element signature="n#!!block;n#utilization#0;n#ServerService#0" />
-                <element signature="n#!!block;n#serverOneUtilization#1;n#ServerService#0" />
-                <element signature="n#!!block;n#serverOneServices#0;n#ServerService#0" />
-                <element signature="n#!!block;n#serverTwoServices#0;n#ServerService#0" />
-                <element signature="n#!!block;n#averageWait#0;n#ServerService#0" />
-                <element signature="n#!!block;n#maximumWait#0;n#ServerService#0" />
-                <element signature="n#!!block;n#consumersServed#0;n#ServerService#0" />
-                <element signature="n#!!block;n#calculateStartTime#0;n#ServerService#0" />
-                <element signature="e#1387#1517#0" />
-                <element signature="n#!!block;n#getServerOneIdleTime#0;n#ServerService#0" />
-                <element signature="e#1732#1746#0" />
-                <element signature="e#1817#1835#0" />
-                <element signature="n#!!block;n#calculateServerOneIdleTimes#0;n#ServerService#0" />
-                <element signature="e#2067#2081#0" />
-                <element signature="n#!!block;n#calculateServerTwoIdleTimes#0;n#ServerService#0" />
-                <element signature="e#1974#2120#0" />
-                <element signature="n#!!block;n#getIdleTime#0;n#ServerService#0" />
-                <element signature="e#2367#2436#0" />
-                <element signature="e#2655#2990#0" />
-                <element signature="e#2731#2820#0" />
-                <element signature="n#!!block;n#calculateWaitTime#0;n#ServerService#0" />
-                <element signature="n#!!block;n#calculateAverageWait#0;n#ServerService#0" />
-                <element signature="n#!!block;n#calculateMaximumWait#0;n#ServerService#0" />
-                <element signature="n#!!block;n#calculateConsumersServedBeforeLimit#0;n#ServerService#0" />
-                <element signature="n#!!block;n#calculateWaitForServerTwoTime#0;n#ServerService#0" />
-                <element signature="e#4188#4273#0" />
-                <element signature="n#!!block;n#calculateServerTwoStartTime#0;n#ServerService#0" />
-                <element signature="e#4524#4628#0" />
-                <element signature="n#!!block;n#createServerOneService#0;n#ServerService#0" />
-                <element signature="n#!!block;n#createServerTwoService#0;n#ServerService#0" />
-                <element signature="n#!!block;n#createServices#0;n#ServerService#0" />
-                <element signature="e#5754#6284#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Stats.test.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Stats.test.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Stats.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Stats.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="Stats.test.tsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Stats.test.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="781">
+                  <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ServerService.test.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/services/ServerService.test.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="510">
+                  <caret line="134" column="63" selection-start-line="134" selection-start-column="63" selection-end-line="134" selection-end-column="63" />
+                  <folding>
+                    <element signature="e#322#1443#0" />
+                    <element signature="e#346#420#0" />
+                    <element signature="e#1522#1755#0" />
+                    <element signature="e#1849#2366#0" />
+                    <element signature="e#1881#1988#0" />
+                    <element signature="e#2021#2129#0" />
+                    <element signature="e#2438#2628#0" />
+                    <element signature="e#2634#2704#0" />
+                    <element signature="e#2996#3186#0" />
+                    <element signature="e#3268#3461#0" />
+                    <element signature="e#3557#3771#0" />
+                    <element signature="e#3867#4126#0" />
+                    <element signature="e#4251#4357#0" />
+                    <element signature="e#4499#4969#0" />
+                    <element signature="e#4818#4891#0" />
+                    <element signature="e#5036#5494#0" />
+                    <element signature="e#5580#5798#0" />
+                    <element signature="e#5603#5712#0" />
+                    <element signature="e#5881#6373#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="Stats.tsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Stats.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="799">
+                  <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ServerService.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/services/ServerService.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="25" column="74" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
+                  <folding>
+                    <element signature="n#!!block;n#serverOneServices#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#serverTwoServices#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#consumersServed#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#calculateStartTime#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#getServerOneIdleTime#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#calculateServerOneIdleTimes#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#calculateServerTwoIdleTimes#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#calculateWaitTime#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#calculateConsumersServedBeforeLimit#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#calculateWaitForServerTwoTime#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#calculateServerTwoStartTime#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#createServerOneService#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#createServerTwoService#0;n#ServerService#0" />
+                    <element signature="n#!!block;n#createServices#0;n#ServerService#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <replaceStrings>
@@ -135,13 +154,13 @@
         <option value="$PROJECT_DIR$/src/components/SimTable.test.tsx" />
         <option value="$PROJECT_DIR$/src/models/ConsumerModel.ts" />
         <option value="$PROJECT_DIR$/src/components/SimRow.test.tsx" />
-        <option value="$PROJECT_DIR$/src/services/ServerService.test.ts" />
         <option value="$PROJECT_DIR$/src/components/SimTable.tsx" />
         <option value="$PROJECT_DIR$/src/components/SimRow.tsx" />
         <option value="$PROJECT_DIR$/build/dist/Stats.test.js" />
+        <option value="$PROJECT_DIR$/src/services/ServerService.test.ts" />
         <option value="$PROJECT_DIR$/src/services/ServerService.ts" />
-        <option value="$PROJECT_DIR$/src/Stats.test.tsx" />
         <option value="$PROJECT_DIR$/src/Stats.tsx" />
+        <option value="$PROJECT_DIR$/src/Stats.test.tsx" />
       </list>
     </option>
   </component>
@@ -154,7 +173,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="1418" />
@@ -364,21 +383,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ServerService - 2018.06.11 at 16h 37m 14s.xml">
-      <configuration name="ServerService" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Stats_should_render_the_server_server_utilizations - 2018.06.11 at 17h 03m 55s.xml">
-      <configuration name="Stats.should render the server server utilizations" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Stats_should_render_the_server_server_utilizations - 2018.06.11 at 17h 04m 19s.xml">
-      <configuration name="Stats.should render the server server utilizations" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Stats_should_render_the_server_server_utilizations - 2018.06.11 at 17h 05m 13s.xml">
-      <configuration name="Stats.should render the server server utilizations" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Stats_should_render_the_server_server_utilizations - 2018.06.11 at 17h 06m 24s.xml">
-      <configuration name="Stats.should render the server server utilizations" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="Stats_should_render_the_server_server_utilizations - 2018.06.11 at 17h 07m 12s.xml">
       <configuration name="Stats.should render the server server utilizations" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -394,12 +398,27 @@
     <history-entry file="Stats_should_render_the_average_wait_time_for_servers - 2018.06.11 at 17h 25m 06s.xml">
       <configuration name="Stats.should render the average wait time for servers" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="Stats - 2018.06.11 at 17h 38m 37s.xml">
+      <configuration name="Stats" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Stats_should_render_utilization_for_servers - 2018.06.11 at 17h 39m 35s.xml">
+      <configuration name="Stats.should render utilization for servers" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Stats - 2018.06.11 at 17h 39m 38s.xml">
+      <configuration name="Stats" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Stats - 2018.06.11 at 17h 39m 54s.xml">
+      <configuration name="Stats" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Stats - 2018.06.11 at 17h 40m 23s.xml">
+      <configuration name="Stats" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52758000" />
+    <option name="totallyTimeSpent" value="53234000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="22" width="1280" height="1418" extended-state="0" />
+    <frame x="0" y="22" width="2560" height="1418" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
@@ -439,6 +458,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/components/SimRow.tsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -465,19 +489,25 @@
         <state relative-caret-position="720">
           <caret line="131" column="30" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
           <folding>
-            <element signature="e#322#1431#0" />
+            <element signature="e#322#1443#0" />
             <element signature="e#346#420#0" />
-            <element signature="e#1510#1743#0" />
-            <element signature="e#3193#3203#0" />
-            <element signature="e#3244#3458#0" />
-            <element signature="e#3554#3813#0" />
-            <element signature="e#3906#4102#0" />
-            <element signature="e#3929#4035#0" />
-            <element signature="e#4666#5088#0" />
-            <element signature="e#4949#5022#0" />
-            <element signature="e#5174#5392#0" />
-            <element signature="e#5197#5306#0" />
-            <element signature="e#5475#5967#0" />
+            <element signature="e#1522#1755#0" />
+            <element signature="e#1849#2366#0" />
+            <element signature="e#1881#1988#0" />
+            <element signature="e#2021#2129#0" />
+            <element signature="e#2438#2628#0" />
+            <element signature="e#2634#2704#0" />
+            <element signature="e#2996#3186#0" />
+            <element signature="e#3268#3461#0" />
+            <element signature="e#3557#3771#0" />
+            <element signature="e#3867#4126#0" />
+            <element signature="e#4251#4357#0" />
+            <element signature="e#4499#4969#0" />
+            <element signature="e#4818#4891#0" />
+            <element signature="e#5036#5494#0" />
+            <element signature="e#5580#5798#0" />
+            <element signature="e#5603#5712#0" />
+            <element signature="e#5881#6373#0" />
           </folding>
         </state>
       </provider>
@@ -517,39 +547,20 @@
         <state relative-caret-position="2159">
           <caret line="127" selection-start-line="127" selection-end-line="133" selection-end-column="3" />
           <folding>
-            <element signature="n#!!block;n#hydrate#0;n#ServerService#0" />
-            <element signature="n#!!block;n#utilization#0;n#ServerService#0" />
-            <element signature="n#!!block;n#serverOneUtilization#1;n#ServerService#0" />
             <element signature="n#!!block;n#serverOneServices#0;n#ServerService#0" />
             <element signature="n#!!block;n#serverTwoServices#0;n#ServerService#0" />
-            <element signature="n#!!block;n#averageWait#0;n#ServerService#0" />
-            <element signature="n#!!block;n#maximumWait#0;n#ServerService#0" />
             <element signature="n#!!block;n#consumersServed#0;n#ServerService#0" />
             <element signature="n#!!block;n#calculateStartTime#0;n#ServerService#0" />
-            <element signature="e#1387#1517#0" />
             <element signature="n#!!block;n#getServerOneIdleTime#0;n#ServerService#0" />
-            <element signature="e#1732#1746#0" />
-            <element signature="e#1817#1835#0" />
             <element signature="n#!!block;n#calculateServerOneIdleTimes#0;n#ServerService#0" />
-            <element signature="e#2067#2081#0" />
             <element signature="n#!!block;n#calculateServerTwoIdleTimes#0;n#ServerService#0" />
-            <element signature="e#1974#2120#0" />
-            <element signature="n#!!block;n#getIdleTime#0;n#ServerService#0" />
-            <element signature="e#2367#2436#0" />
-            <element signature="e#2655#2990#0" />
-            <element signature="e#2731#2820#0" />
             <element signature="n#!!block;n#calculateWaitTime#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateAverageWait#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateMaximumWait#0;n#ServerService#0" />
             <element signature="n#!!block;n#calculateConsumersServedBeforeLimit#0;n#ServerService#0" />
             <element signature="n#!!block;n#calculateWaitForServerTwoTime#0;n#ServerService#0" />
-            <element signature="e#4188#4273#0" />
             <element signature="n#!!block;n#calculateServerTwoStartTime#0;n#ServerService#0" />
-            <element signature="e#4524#4628#0" />
             <element signature="n#!!block;n#createServerOneService#0;n#ServerService#0" />
             <element signature="n#!!block;n#createServerTwoService#0;n#ServerService#0" />
             <element signature="n#!!block;n#createServices#0;n#ServerService#0" />
-            <element signature="e#5754#6284#0" />
           </folding>
         </state>
       </provider>
@@ -763,28 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/ServerService.test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="131" column="30" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
-          <folding>
-            <element signature="e#322#1431#0" />
-            <element signature="e#346#420#0" />
-            <element signature="e#1510#1743#0" />
-            <element signature="e#3193#3203#0" />
-            <element signature="e#3244#3458#0" />
-            <element signature="e#3554#3813#0" />
-            <element signature="e#3906#4102#0" />
-            <element signature="e#3929#4035#0" />
-            <element signature="e#4666#5088#0" />
-            <element signature="e#4949#5022#0" />
-            <element signature="e#5174#5392#0" />
-            <element signature="e#5197#5306#0" />
-            <element signature="e#5475#5967#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SimTable.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -815,62 +804,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stats.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/ServerService.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="133" selection-start-line="133" selection-end-line="139" selection-end-column="3" />
+        <state relative-caret-position="408">
+          <caret line="25" column="74" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
           <folding>
-            <element signature="n#!!block;n#hydrate#0;n#ServerService#0" />
-            <element signature="n#!!block;n#utilization#0;n#ServerService#0" />
-            <element signature="n#!!block;n#serverOneUtilization#1;n#ServerService#0" />
             <element signature="n#!!block;n#serverOneServices#0;n#ServerService#0" />
             <element signature="n#!!block;n#serverTwoServices#0;n#ServerService#0" />
-            <element signature="n#!!block;n#averageWait#0;n#ServerService#0" />
-            <element signature="n#!!block;n#maximumWait#0;n#ServerService#0" />
             <element signature="n#!!block;n#consumersServed#0;n#ServerService#0" />
             <element signature="n#!!block;n#calculateStartTime#0;n#ServerService#0" />
-            <element signature="e#1387#1517#0" />
             <element signature="n#!!block;n#getServerOneIdleTime#0;n#ServerService#0" />
-            <element signature="e#1732#1746#0" />
-            <element signature="e#1817#1835#0" />
             <element signature="n#!!block;n#calculateServerOneIdleTimes#0;n#ServerService#0" />
-            <element signature="e#2067#2081#0" />
             <element signature="n#!!block;n#calculateServerTwoIdleTimes#0;n#ServerService#0" />
-            <element signature="e#1974#2120#0" />
-            <element signature="n#!!block;n#getIdleTime#0;n#ServerService#0" />
-            <element signature="e#2367#2436#0" />
-            <element signature="e#2655#2990#0" />
-            <element signature="e#2731#2820#0" />
             <element signature="n#!!block;n#calculateWaitTime#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateAverageWait#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateMaximumWait#0;n#ServerService#0" />
             <element signature="n#!!block;n#calculateConsumersServedBeforeLimit#0;n#ServerService#0" />
             <element signature="n#!!block;n#calculateWaitForServerTwoTime#0;n#ServerService#0" />
-            <element signature="e#4188#4273#0" />
             <element signature="n#!!block;n#calculateServerTwoStartTime#0;n#ServerService#0" />
-            <element signature="e#4524#4628#0" />
             <element signature="n#!!block;n#createServerOneService#0;n#ServerService#0" />
             <element signature="n#!!block;n#createServerTwoService#0;n#ServerService#0" />
             <element signature="n#!!block;n#createServices#0;n#ServerService#0" />
-            <element signature="e#5754#6284#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Stats.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        <state relative-caret-position="799">
+          <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/ServerService.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="134" column="63" selection-start-line="134" selection-start-column="63" selection-end-line="134" selection-end-column="63" />
+          <folding>
+            <element signature="e#322#1443#0" />
+            <element signature="e#346#420#0" />
+            <element signature="e#1522#1755#0" />
+            <element signature="e#1849#2366#0" />
+            <element signature="e#1881#1988#0" />
+            <element signature="e#2021#2129#0" />
+            <element signature="e#2438#2628#0" />
+            <element signature="e#2634#2704#0" />
+            <element signature="e#2996#3186#0" />
+            <element signature="e#3268#3461#0" />
+            <element signature="e#3557#3771#0" />
+            <element signature="e#3867#4126#0" />
+            <element signature="e#4251#4357#0" />
+            <element signature="e#4499#4969#0" />
+            <element signature="e#4818#4891#0" />
+            <element signature="e#5036#5494#0" />
+            <element signature="e#5580#5798#0" />
+            <element signature="e#5603#5712#0" />
+            <element signature="e#5881#6373#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stats.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

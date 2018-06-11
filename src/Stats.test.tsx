@@ -24,29 +24,33 @@ describe('Stats', () => {
   });
 
   it('should render utilization for servers', () => {
-    expect(subject.find('.server-one').find('.utilization').find('span').at(0).text()).toBe('Server 1 utilization [%]:');
+    expect(subject.find('.server-one').find('.utilization').find('span').at(0).text()).toBe('Utilization [%]:');
     expect(subject.find('.server-one').find('.utilization').find('span').at(1).text()).toBe(
       (serverService.serverOneUtilization * 100).toFixed(2));
 
-    expect(subject.find('.server-two').find('.utilization').find('span').at(0).text()).toBe('Server 2 utilization [%]:');
+    expect(subject.find('.server-two').find('.utilization').find('span').at(0).text()).toBe('Utilization [%]:');
     expect(subject.find('.server-two').find('.utilization').find('span').at(1).text()).toBe(
       (serverService.serverTwoUtilization * 100).toFixed(2));
   });
 
   it('should render the average wait time for servers', () => {
-    expect(subject.find('.server-one').find('.average-wait').find('span').at(0).text()).toBe('Average wait time for S1 [minutes]:');
+    expect(subject.find('.server-one').find('.average-wait').find('span').at(0).text()).toBe('Average wait time [minutes]:');
     expect(subject.find('.server-one').find('.average-wait').find('span').at(1).text()).toContain(
       `${(serverService.averageWaitForServerOne).toFixed(1)}`);
 
-    expect(subject.find('.server-two').find('.average-wait').find('span').at(0).text()).toBe('Average wait time for S2 [minutes]:');
+    expect(subject.find('.server-two').find('.average-wait').find('span').at(0).text()).toBe('Average wait time [minutes]:');
     expect(subject.find('.server-two').find('.average-wait').find('span').at(1).text()).toContain(
       `${(serverService.averageWaitForServerTwo).toFixed(1)}`);
   });
 
-  it('should render the max wait time', () => {
-    expect(subject.find('.maximum-wait').find('span').at(0).text()).toBe('Maximum wait time [minutes]:');
-    expect(subject.find('.maximum-wait').find('span').at(1).text()).toContain(
-      `${(serverService.maximumWait).toFixed(1)}`);
+  it('should render the max wait time for servers', () => {
+    expect(subject.find('.server-one').find('.maximum-wait').find('span').at(0).text()).toBe('Maximum wait time [minutes]:');
+    expect(subject.find('.server-one').find('.maximum-wait').find('span').at(1).text()).toContain(
+      `${(serverService.maximumWaitForServerOne).toFixed(1)}`);
+
+    expect(subject.find('.server-two').find('.maximum-wait').find('span').at(0).text()).toBe('Maximum wait time [minutes]:');
+    expect(subject.find('.server-two').find('.maximum-wait').find('span').at(1).text()).toContain(
+      `${(serverService.maximumWaitForServerTwo).toFixed(1)}`);
   });
 
   it('should render the number of customers served before 1000 minutes', () => {

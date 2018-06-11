@@ -9,7 +9,8 @@ export class ServerService {
   private _serverTwoUtilization: number = 0;
   private _averageWaitForServerOne: number = 0;
   private _averageWaitForServerTwo: number = 0;
-  private _maximumWait: number = 0;
+  private _maximumWaitForServerOne: number = 0;
+  private _maximumWaitForServerTwo: number = 0;
   private _consumersServed: number = 0;
 
   public hydrate(consumers: ConsumerModel[]) {
@@ -21,7 +22,8 @@ export class ServerService {
     this._serverTwoUtilization = this.calculateUtilization(this._serverTwoServices);
     this._averageWaitForServerOne = this.calculateAverageWaitForServerOne(this._consumers);
     this._averageWaitForServerTwo = this.calculateAverageWaitForServerTwo(this._consumers);
-    this._maximumWait = this.calculateMaximumWait(this._consumers);
+    this._maximumWaitForServerOne = this.calculateMaximumWaitForServerOne(this._consumers);
+    this._maximumWaitForServerTwo = this.calculateMaximumWaitForServerTwo(this._consumers);
     this._consumersServed = this.calculateConsumersServedBeforeLimit(this._serverOneServices, 1000);
   }
 
@@ -50,8 +52,12 @@ export class ServerService {
     return this._averageWaitForServerTwo;
   }
 
-  public get maximumWait() {
-    return this._maximumWait;
+  public get maximumWaitForServerOne() {
+    return this._maximumWaitForServerOne;
+  }
+
+  public get maximumWaitForServerTwo() {
+    return this._maximumWaitForServerTwo;
   }
 
   public get consumersServed() {
@@ -153,8 +159,12 @@ export class ServerService {
     return (consumers.length > 0) ? (totalWait / consumers.length) : 0;
   }
 
-  public calculateMaximumWait(consumers: ConsumerModel[]) {
+  public calculateMaximumWaitForServerOne(consumers: ConsumerModel[]) {
     return Math.max.apply(Math, consumers.map((consumer) => consumer.waitForServerOneTime));
+  }
+
+  public calculateMaximumWaitForServerTwo(consumers: ConsumerModel[]) {
+    return Math.max.apply(Math, consumers.map((consumer) => consumer.waitForServerTwoTime));
   }
 
   public calculateConsumersServedBeforeLimit(services: ServiceModel[], timeLimit: number) {
