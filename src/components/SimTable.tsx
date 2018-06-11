@@ -3,41 +3,16 @@ import { StyledSimHeaders } from './SimHeaders';
 import { StyledSimBody } from './SimBody';
 import { ConsumerModel } from '../models/ConsumerModel';
 import { HeaderModel } from '../models/HeaderModel';
-import { ConsumerService } from '../services/ConsumerService';
 import styled from 'styled-components';
-import { ServerService } from '../services/ServerService';
 import { ServiceModel } from '../models/ServiceModel';
 
 interface Props {
+  consumers: ConsumerModel[];
+  services: ServiceModel[];
   className?: string;
 }
 
-interface State {
-  consumers: ConsumerModel[],
-  services: ServiceModel[]
-}
-
-export class SimTable extends React.Component<Props, State> {
-  state = {
-    consumers: [],
-    services: [],
-  };
-
-
-  componentDidMount() {
-    let consumerService = new ConsumerService(1000);
-    consumerService.hydrate();
-
-    let serverService = new ServerService();
-    serverService.hydrate(consumerService.consumers);
-
-    this.setState({
-      consumers: consumerService.consumers,
-      services: serverService.services
-    });
-  }
-
-  render() {
+export const SimTable = (props: Props) => {
     const headers = [
       new HeaderModel('Consumer Seed', 'U(0,1)'),
       new HeaderModel('Interarrival Time', '{-1 * ln(seed)} [minutes]'),
@@ -51,15 +26,14 @@ export class SimTable extends React.Component<Props, State> {
     ];
 
     return (
-      <div className={this.props.className}>
+      <div className={props.className}>
         <StyledSimHeaders headers={headers}/>
         <StyledSimBody
-          consumers={this.state.consumers}
-          services={this.state.services}
+          consumers={props.consumers}
+          services={props.services}
         />
       </div>
     )
-  }
 }
 
 export const StyledSimTable = styled(SimTable)`

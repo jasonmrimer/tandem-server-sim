@@ -4,12 +4,16 @@ import { ServiceModel } from '../models/ServiceModel';
 export class ServerService {
   private _consumers: ConsumerModel[];
   private _services: ServiceModel[] = [];
+  private _utilization: number = 0;
 
   public hydrate(consumers: ConsumerModel[]) {
     this._consumers = consumers;
     this.createServices();
   }
 
+  public get utilization() {
+    return this._utilization;
+  }
 
   public get services() {
     return this._services;
@@ -48,6 +52,15 @@ export class ServerService {
     return waitTime;
   }
 
+  public calculateUtilization(services: ServiceModel[]) {
+    let totalServiceTime = 0;
+    services.map((service) => {
+      totalServiceTime += service.duration;
+    });
+    return totalServiceTime / services[services.length - 1].endTime;
+
+  }
+
   private createServices() {
     this._consumers.map((consumer, index) => {
       const startTime = this.calculateStartTime(this._services, consumer);
@@ -60,6 +73,7 @@ export class ServerService {
       service.idleTime = this.calculateIdleTime(service, this._consumers[index + 1]);
 
       this._services.push(service)
+      this._utilization = this.calculateUtilization(this._services);
     })
   }
 }

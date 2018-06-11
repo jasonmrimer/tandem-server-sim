@@ -11,8 +11,11 @@ describe('SimTable', () => {
 
   beforeEach(() => {
     subject = shallow(
-      <SimTable/>
-    )
+      <SimTable
+        consumers={[new ConsumerModel(1,1,1)]}
+        services={[new ServiceModel(1,1,1)]}
+      />
+    );
   });
 
   it('should render table headers', () => {
@@ -21,18 +24,5 @@ describe('SimTable', () => {
 
   it('should render a table body', () => {
     expect(subject.find(StyledSimBody).exists()).toBeTruthy();
-  });
-
-  it('should hydrate a consumer service and set the state with provided consumers', () => {
-    const consumers = (subject.state('consumers')) as ConsumerModel[];
-    expect(consumers.length).toBeGreaterThan(1);
-    expect(consumers[consumers.length - 1].arrivalTime).toBeLessThanOrEqual(1000);
-    expect(subject.find(StyledSimBody).prop('consumers')).toBe(consumers);
-  });
-
-  it('should hydrate a server 1 service and set the state with provided server', () => {
-    const services = (subject.state('services')) as ServiceModel[];
-    expect(services.length).toBeGreaterThan(1);
-    expect(subject.find(StyledSimBody).prop('services')).toBe(services);
   });
 });

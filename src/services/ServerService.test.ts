@@ -43,4 +43,13 @@ describe('ServerService', () => {
     const waitTime = subject.calculateWaitTime(currService, currConsumer);
     expect(waitTime).toBe(4);
   });
+
+  it('should calculate the utilization based on service over entire sim', () => {
+    const services = [
+      new ServiceModel(1, 1, 2),
+      new ServiceModel(5, 1, 2),
+      new ServiceModel(8, 1, 2),
+    ];
+    expect(subject.calculateUtilization(services)).toBe(0.6);
+  });
 });
