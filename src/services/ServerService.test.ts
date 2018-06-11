@@ -106,7 +106,7 @@ describe('ServerService', () => {
     expect(waitTime).toBe(4);
   });
 
-  it('should calculate the utilization based on serverOneService over entire sim', () => {
+  it('should calculate the serverOneUtilization based on serverOneService over entire sim', () => {
     const services = [
       new ServiceModel(1, 1, 2),
       new ServiceModel(5, 1, 2),

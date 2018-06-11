@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea80114c-1997-4ecb-823d-e8411d52cff6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/SimRow.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimRow.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SimRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SimTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ConsumerModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ConsumerModel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stats.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stats.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stats.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ServerService.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ServerService.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ServerService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ServerService.ts" afterDir="false" />
     </list>
@@ -55,10 +53,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SimRow.tsx" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SimRow.tsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/SimRow.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="254">
+                <state relative-caret-position="391">
                   <caret line="23" selection-start-line="23" selection-end-line="23" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
@@ -76,15 +74,39 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="Stats.test.tsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Stats.test.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="424">
+                  <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="ServerService.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ServerService.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/services/ServerService.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="447">
-                  <caret line="146" column="89" selection-start-line="146" selection-start-column="89" selection-end-line="146" selection-end-column="89" />
+                <state relative-caret-position="510">
+                  <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Stats.tsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Stats.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -135,8 +157,6 @@
         <option value="$PROJECT_DIR$/src/services/ConsumerService.test.ts" />
         <option value="$PROJECT_DIR$/src/App.test.tsx" />
         <option value="$PROJECT_DIR$/tslint.json" />
-        <option value="$PROJECT_DIR$/src/Stats.tsx" />
-        <option value="$PROJECT_DIR$/src/Stats.test.tsx" />
         <option value="$PROJECT_DIR$/src/components/SimBody.tsx" />
         <option value="$PROJECT_DIR$/src/components/SimBody.test.tsx" />
         <option value="$PROJECT_DIR$/src/components/Simulation.tsx" />
@@ -146,9 +166,12 @@
         <option value="$PROJECT_DIR$/src/models/ConsumerModel.ts" />
         <option value="$PROJECT_DIR$/src/components/SimRow.test.tsx" />
         <option value="$PROJECT_DIR$/src/services/ServerService.test.ts" />
-        <option value="$PROJECT_DIR$/src/services/ServerService.ts" />
         <option value="$PROJECT_DIR$/src/components/SimTable.tsx" />
         <option value="$PROJECT_DIR$/src/components/SimRow.tsx" />
+        <option value="$PROJECT_DIR$/src/services/ServerService.ts" />
+        <option value="$PROJECT_DIR$/build/dist/Stats.test.js" />
+        <option value="$PROJECT_DIR$/src/Stats.tsx" />
+        <option value="$PROJECT_DIR$/src/Stats.test.tsx" />
       </list>
     </option>
   </component>
@@ -226,7 +249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.ServerService">
+  <component name="RunManager" selected="Jest.Stats.should render utilization for servers">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -271,19 +294,6 @@
         <test-name value="should return an idle time when waiting on a consumer to arrive" />
       </test-names>
     </configuration>
-    <configuration name="ServerService.should return an idle time when waiting on server two" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <working-dir value="$PROJECT_DIR$" />
-      <jest-options value="--env=jsdom" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/ServerService.test.ts" />
-      <test-names>
-        <test-name value="ServerService" />
-        <test-name value="should return an idle time when waiting on server two" />
-      </test-names>
-    </configuration>
     <configuration name="ServerService.should return no idle time when immediate start for server two" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -297,16 +307,30 @@
         <test-name value="should return no idle time when immediate start for server two" />
       </test-names>
     </configuration>
-    <configuration name="SimRow" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="Stats.should render the server server utilizations" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <jest-options value="--env=jsdom" />
       <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/components/SimRow.test.tsx" />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Stats.test.tsx" />
       <test-names>
-        <test-name value="SimRow" />
+        <test-name value="Stats" />
+        <test-name value="should render the server server utilizations" />
+      </test-names>
+    </configuration>
+    <configuration name="Stats.should render utilization for servers" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <jest-options value="--env=jsdom" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Stats.test.tsx" />
+      <test-names>
+        <test-name value="Stats" />
+        <test-name value="should render utilization for servers" />
       </test-names>
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
@@ -340,19 +364,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Jest.ServerService.should return an idle time when waiting on server two" />
-      <item itemvalue="Jest.SimRow" />
       <item itemvalue="Jest.ServerService" />
       <item itemvalue="Jest.ServerService.should return an idle time when waiting on a consumer to arrive" />
       <item itemvalue="Jest.ServerService.should return no idle time when immediate start for server two" />
+      <item itemvalue="Jest.Stats.should render the server server utilizations" />
+      <item itemvalue="Jest.Stats.should render utilization for servers" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Stats.should render utilization for servers" />
+        <item itemvalue="Jest.Stats.should render the server server utilizations" />
         <item itemvalue="Jest.ServerService" />
         <item itemvalue="Jest.ServerService.should return no idle time when immediate start for server two" />
         <item itemvalue="Jest.ServerService.should return an idle time when waiting on a consumer to arrive" />
-        <item itemvalue="Jest.SimRow" />
-        <item itemvalue="Jest.ServerService.should return an idle time when waiting on server two" />
       </list>
     </recent_temporary>
   </component>
@@ -366,29 +390,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528423413708</updated>
-      <workItem from="1528423414912" duration="58176000" />
+      <workItem from="1528423414912" duration="59245000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ServerService_should_return_an_idle_time_when_waiting_on_a_consumer_to_arrive - 2018.06.11 at 16h 26m 26s.xml">
-      <configuration name="ServerService.should return an idle time when waiting on a consumer to arrive" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="ServerService_should_return_an_idle_time_when_waiting_on_a_consumer_to_arrive - 2018.06.11 at 16h 28m 01s.xml">
-      <configuration name="ServerService.should return an idle time when waiting on a consumer to arrive" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="ServerService_should_return_no_idle_time_when_immediate_start_for_server_two - 2018.06.11 at 16h 32m 19s.xml">
-      <configuration name="ServerService.should return no idle time when immediate start for server two" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="ServerService - 2018.06.11 at 16h 33m 30s.xml">
-      <configuration name="ServerService" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="ServerService - 2018.06.11 at 16h 33m 37s.xml">
-      <configuration name="ServerService" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="ServerService - 2018.06.11 at 16h 34m 01s.xml">
-      <configuration name="ServerService" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="ServerService_should_return_no_idle_time_when_immediate_start_for_server_two - 2018.06.11 at 16h 34m 32s.xml">
       <configuration name="ServerService.should return no idle time when immediate start for server two" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -401,9 +407,27 @@
     <history-entry file="ServerService - 2018.06.11 at 16h 37m 14s.xml">
       <configuration name="ServerService" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="Stats_should_render_the_server_server_utilizations - 2018.06.11 at 17h 03m 55s.xml">
+      <configuration name="Stats.should render the server server utilizations" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Stats_should_render_the_server_server_utilizations - 2018.06.11 at 17h 04m 19s.xml">
+      <configuration name="Stats.should render the server server utilizations" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Stats_should_render_the_server_server_utilizations - 2018.06.11 at 17h 05m 13s.xml">
+      <configuration name="Stats.should render the server server utilizations" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Stats_should_render_the_server_server_utilizations - 2018.06.11 at 17h 06m 24s.xml">
+      <configuration name="Stats.should render the server server utilizations" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Stats_should_render_the_server_server_utilizations - 2018.06.11 at 17h 07m 12s.xml">
+      <configuration name="Stats.should render the server server utilizations" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Stats_should_render_utilization_for_servers - 2018.06.11 at 17h 07m 37s.xml">
+      <configuration name="Stats.should render utilization for servers" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50687000" />
+    <option name="totallyTimeSpent" value="51756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="2560" height="1418" extended-state="6" />
@@ -652,16 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stats.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/ServiceModel.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -683,16 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stats.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -772,13 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/ServerService.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="146" column="89" selection-start-line="146" selection-start-column="89" selection-end-line="146" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SimTable.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -791,8 +788,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SimRow.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="391">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/dist/Stats.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/ServerService.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stats.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stats.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

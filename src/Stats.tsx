@@ -14,8 +14,14 @@ export const Stats = (props: Props) => {
       <h3>Stats Table</h3>
       <div className='stats-table'>
         <div className='utilization'>
-          <span>Server utilization [%]:</span>
-          <span>{(props.serverService.utilization * 100).toFixed(2)}</span>
+          <div className='server-one'>
+            <span>Server 1 utilization [%]:</span>
+            <span>{(props.serverService.serverOneUtilization * 100).toFixed(2)}</span>
+          </div>
+          <div className='server-two-utilization'>
+            <span>Server 2 utilization [%]:</span>
+            <span>{(props.serverService.serverTwoUtilization * 100).toFixed(2)}</span>
+          </div>
         </div>
         <div className='average-wait'>
           <span>Average wait time [minutes]:</span>

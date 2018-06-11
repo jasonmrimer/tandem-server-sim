@@ -5,7 +5,8 @@ export class ServerService {
   private _consumers: ConsumerModel[];
   private _serverOneServices: ServiceModel[] = [];
   private _serverTwoServices: ServiceModel[] = [];
-  private _utilization: number = 0;
+  private _serverOneUtilization: number = 0;
+  private _serverTwoUtilization: number = 0;
   private _averageWait: number = 0;
   private _maximumWait: number = 0;
   private _consumersServed: number = 0;
@@ -15,15 +16,20 @@ export class ServerService {
 
     this.createServices();
 
-    this._utilization = this.calculateUtilization(this._serverOneServices);
+    this._serverOneUtilization = this.calculateUtilization(this._serverOneServices);
+    this._serverTwoUtilization = this.calculateUtilization(this._serverTwoServices);
     this._averageWait = this.calculateAverageWait(this._consumers);
     this._maximumWait = this.calculateMaximumWait(this._consumers);
     this._consumersServed = this.calculateConsumersServedBeforeLimit(this._serverOneServices, 1000);
   }
 
 
-  public get utilization() {
-    return this._utilization;
+  public get serverOneUtilization() {
+    return this._serverOneUtilization;
+  }
+
+  public get serverTwoUtilization() {
+    return this._serverTwoUtilization;
   }
 
   public get serverOneServices() {
@@ -101,10 +107,6 @@ export class ServerService {
       return prevServerTwo.endTime < currServerTwo.startTime;
     };
 
-    // const awaitingServerTwo = (currServerOne: ServiceModel, currServerTwo: ServiceModel) => {
-    //   return currServerOne.endTime < currServerTwo.startTime;
-    // }
-
     let idleTime = 0;
 
     if (prevServerTwoService) {
@@ -112,10 +114,6 @@ export class ServerService {
       if (awaitingServerOne(prevServerTwoService, currServerTwoService)) {
         idleTime = currServerOneService.endTime - prevServerTwoService.endTime;
       }
-      //
-      // if (awaitingServerTwo(currServerOneService, currServerTwoService)) {
-      //   idleTime = prevServerTwoService.endTime - currServerOneService.endTime;
-      // }
     }
 
     return idleTime;
@@ -133,7 +131,6 @@ export class ServerService {
       totalServiceTime += service.duration;
     });
     return totalServiceTime / services[services.length - 1].endTime;
-
   }
 
   public calculateAverageWait(consumers: ConsumerModel[]) {

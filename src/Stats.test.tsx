@@ -23,10 +23,14 @@ describe('Stats', () => {
       />);
   });
 
-  it('should render the server utilization', () => {
-    expect(subject.find('.utilization').find('span').at(0).text()).toBe('Server utilization [%]:');
-    expect(subject.find('.utilization').find('span').at(1).text()).toBe(
-      (serverService.utilization * 100).toFixed(2));
+  it('should render utilization for servers', () => {
+    expect(subject.find('.server-one-utilization').find('span').at(0).text()).toBe('Server 1 utilization [%]:');
+    expect(subject.find('.server-one-utilization').find('span').at(1).text()).toBe(
+      (serverService.serverOneUtilization * 100).toFixed(2));
+
+    expect(subject.find('.server-two-utilization').find('span').at(0).text()).toBe('Server 2 utilization [%]:');
+    expect(subject.find('.server-two-utilization').find('span').at(1).text()).toBe(
+      (serverService.serverOneUtilization * 100).toFixed(2));
   });
 
   it('should render the average wait time', () => {
