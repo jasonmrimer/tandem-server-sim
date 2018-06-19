@@ -12,14 +12,18 @@ To use, clone the git locally and run from the terminal.
 
 ## To View
 
+npm will run from `localhost:3000`.
+
 Visit the homepage `/` for the simulation table.
 Visit the stats page `/stats` for the statistics table.
 
-(npm and yarn will run from `localhost:3000`) 
-
 ## To Run
 
-In the project directory, you can run:
+In the project directory, run:
+
+### `npm install`
+
+Installs all the project dependencies and creates the node_modules package.
 
 ### `npm run build`
 
