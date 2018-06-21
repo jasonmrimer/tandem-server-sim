@@ -1,11 +1,12 @@
 import { ConsumerModel } from '../models/ConsumerModel';
 import { ServiceModel } from '../models/ServiceModel';
+import { ServerOne } from '../servers/ServerOne';
 
 export class ServerService {
+  private _serverOne: ServerOne;
   private _consumers: ConsumerModel[];
   private _serverOneServices: ServiceModel[] = [];
   private _serverTwoServices: ServiceModel[] = [];
-  private _serverOneUtilization: number = 0;
   private _serverTwoUtilization: number = 0;
   private _averageWaitForServerOne: number = 0;
   private _averageWaitForServerTwo: number = 0;
@@ -16,9 +17,11 @@ export class ServerService {
   public hydrate(consumers: ConsumerModel[]) {
     this._consumers = consumers;
 
+    this._serverOne = new ServerOne();
+    this._serverOne.hydrate(consumers);
+
     this.createServices();
 
-    this._serverOneUtilization = this.calculateUtilization(this._serverOneServices);
     this._serverTwoUtilization = this.calculateUtilization(this._serverTwoServices);
     this._averageWaitForServerOne = this.calculateAverageWaitForServerOne(this._consumers);
     this._averageWaitForServerTwo = this.calculateAverageWaitForServerTwo(this._consumers);
@@ -29,7 +32,7 @@ export class ServerService {
 
 
   public get serverOneUtilization() {
-    return this._serverOneUtilization;
+    return this._serverOne.utilization;
   }
 
   public get serverTwoUtilization() {

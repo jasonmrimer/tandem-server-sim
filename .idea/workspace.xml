@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea80114c-1997-4ecb-823d-e8411d52cff6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servers/Server.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servers/ServerOne.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ServerService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ServerService.ts" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,21 +14,83 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="731">
-                <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.66481334">
+      <split-first>
+        <splitter split-orientation="horizontal" split-proportion="0.4447101">
+          <split-first>
+            <leaf>
+              <file leaf-file-name="ServerService.ts" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/services/ServerService.ts">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="257">
+                      <caret line="137" selection-start-line="137" selection-end-line="139" selection-end-column="39" />
+                      <folding>
+                        <element signature="e#0#56#0" expanded="true" />
+                        <element signature="n#!!block;n#serverOneServices#0;n#ServerService#0" />
+                        <element signature="n#!!block;n#calculateStartTime#0;n#ServerService#0" />
+                        <element signature="n#!!block;n#getServerOneIdleTime#0;n#ServerService#0" />
+                        <element signature="n#!!block;n#calculateServerOneIdleTimes#0;n#ServerService#0" />
+                        <element signature="n#!!block;n#calculateServerTwoIdleTimes#0;n#ServerService#0" />
+                        <element signature="n#!!block;n#calculateConsumersServedBeforeLimit#0;n#ServerService#0" />
+                        <element signature="n#!!block;n#calculateWaitForServerTwoTime#0;n#ServerService#0" />
+                        <element signature="n#!!block;n#createServerTwoService#0;n#ServerService#0" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="ServerOne.ts" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/servers/ServerOne.ts">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="1156">
+                      <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
+                      <folding>
+                        <element signature="e#0#34#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="Server.ts" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/servers/Server.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+                  <folding>
+                    <element signature="e#0#54#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <replaceStrings>
@@ -84,6 +150,8 @@
         <option value="$PROJECT_DIR$/src/services/ServerService.ts" />
         <option value="$PROJECT_DIR$/src/Stats.tsx" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/servers/Server.ts" />
+        <option value="$PROJECT_DIR$/src/servers/ServerOne.ts" />
       </list>
     </option>
   </component>
@@ -96,10 +164,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="22" />
-    <option name="width" value="1280" />
+    <option name="width" value="2560" />
     <option name="height" value="1418" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -351,10 +418,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54737000" />
+    <option name="totallyTimeSpent" value="56790000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2560" height="1418" extended-state="6" />
+    <frame x="0" y="22" width="2560" height="1418" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -399,41 +467,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/SimTable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/ServerService.test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="131" column="30" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
-          <folding>
-            <element signature="e#322#1443#0" />
-            <element signature="e#346#420#0" />
-            <element signature="e#1522#1755#0" />
-            <element signature="e#1849#2366#0" />
-            <element signature="e#1881#1988#0" />
-            <element signature="e#2021#2129#0" />
-            <element signature="e#2438#2628#0" />
-            <element signature="e#2634#2704#0" />
-            <element signature="e#2996#3186#0" />
-            <element signature="e#3268#3461#0" />
-            <element signature="e#3557#3771#0" />
-            <element signature="e#3867#4126#0" />
-            <element signature="e#4251#4357#0" />
-            <element signature="e#4499#4969#0" />
-            <element signature="e#4818#4891#0" />
-            <element signature="e#5036#5494#0" />
-            <element signature="e#5580#5798#0" />
-            <element signature="e#5603#5712#0" />
-            <element signature="e#5881#6373#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Stats.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -457,10 +490,8 @@
             <element signature="n#!!block;n#getServerOneIdleTime#0;n#ServerService#0" />
             <element signature="n#!!block;n#calculateServerOneIdleTimes#0;n#ServerService#0" />
             <element signature="n#!!block;n#calculateServerTwoIdleTimes#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateWaitTime#0;n#ServerService#0" />
             <element signature="n#!!block;n#calculateConsumersServedBeforeLimit#0;n#ServerService#0" />
             <element signature="n#!!block;n#calculateWaitForServerTwoTime#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateServerTwoStartTime#0;n#ServerService#0" />
             <element signature="n#!!block;n#createServerTwoService#0;n#ServerService#0" />
           </folding>
         </state>
@@ -710,26 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/ServerService.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="196" column="9" selection-start-line="196" selection-start-column="9" selection-end-line="196" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-            <element signature="n#!!block;n#serverOneServices#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateStartTime#0;n#ServerService#0" />
-            <element signature="n#!!block;n#getServerOneIdleTime#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateServerOneIdleTimes#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateServerTwoIdleTimes#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateWaitTime#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateConsumersServedBeforeLimit#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateWaitForServerTwoTime#0;n#ServerService#0" />
-            <element signature="n#!!block;n#calculateServerTwoStartTime#0;n#ServerService#0" />
-            <element signature="n#!!block;n#createServerTwoService#0;n#ServerService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Stats.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
@@ -747,6 +758,44 @@
             <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servers/Server.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/ServerService.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="137" selection-start-line="137" selection-end-line="139" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+            <element signature="n#!!block;n#serverOneServices#0;n#ServerService#0" />
+            <element signature="n#!!block;n#calculateStartTime#0;n#ServerService#0" />
+            <element signature="n#!!block;n#getServerOneIdleTime#0;n#ServerService#0" />
+            <element signature="n#!!block;n#calculateServerOneIdleTimes#0;n#ServerService#0" />
+            <element signature="n#!!block;n#calculateServerTwoIdleTimes#0;n#ServerService#0" />
+            <element signature="n#!!block;n#calculateConsumersServedBeforeLimit#0;n#ServerService#0" />
+            <element signature="n#!!block;n#calculateWaitForServerTwoTime#0;n#ServerService#0" />
+            <element signature="n#!!block;n#createServerTwoService#0;n#ServerService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servers/ServerOne.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
